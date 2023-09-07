@@ -1,38 +1,123 @@
-.App {
-  text-align: center;
+/********************************************* ROOT-CSS *********************************************/
+
+* {
+  text-decoration: none !important;
+  list-style: none !important;
+  font-family: "M PLUS Rounded 1c", sans-serif;
+}
+*:focus {
+  border: none !important;
+  outline: none !important;
+  box-shadow: none !important;
+}
+:root {
+  --purple: #8755f2;
+  --lesspurple: #8755f2c4;
+  --dark: #0f0f0f;
+  --lessdark: #0f0f0fa1;
+  --grey: #1a1a1a;
+}
+.absolute {
+  position: absolute;
+  top: 500%;
+}
+::-webkit-scrollbar {
+  display: none;
+}
+.fw-lighta {
+  font-family: calibri light !important;
+  letter-spacing: 2px;
+}
+/********************************************* COLORS-CSS *********************************************/
+.muted {
+  color: #777d74 !important;
+}
+/*Black*/
+
+.bg-blacks {
+  background-color: var(--dark) !important;
+}
+.bg-blackless {
+  background-color: var(--lessdark) !important;
+}
+.border-blacks {
+  border: 1px solid var(--dark) !important;
+}
+.border-blackless {
+  border: 1px solid var(--lessdark) !important;
+}
+.text-blacks {
+  color: var(--dark) !important;
+}
+.text-blackless {
+  color: var(--lessdark) !important;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+/*Purple*/
+
+.bg-purple {
+  background-color: var(--purple) !important;
+}
+.bg-purpleless {
+  background-color: var(--lesspurple) !important;
+}
+.border-purple {
+  border: 1px solid var(--purple) !important;
+}
+.border-purpleless {
+  border: 1px solid var(--lesspurple) !important;
+}
+.text-purple {
+  color: var(--purple) !important;
+}
+.text-purpleless {
+  color: var(--lesspurple) !important;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+/********************************************* BODY-CSS *********************************************/
+
+body {
+  background-color: var(--grey) !important;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
-}
+/********************************************* NAVBAR-CSS *********************************************/
 
-.App-link {
-  color: #61dafb;
+.mynavbar {
+  transition: 0.5s ease;
 }
+.mynavbarimg {
+  width: 2.7rem !important;
+  height: 100% !important;
+}
+.mynavbar i {
+  transition: 0.2s ease;
+}
+.setwi {
+  width: 2vw;
+}
+/********************************************* SIDEBAR-CSS *********************************************/
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.sidebar {
+  position: fixed;
+  height: 93.3vh;
+  overflow-y: scroll;
+  margin-top: 78px !important;
+  width: 300px !important;
+}
+.sidebardiv {
+  width: 100% !important;
+  overflow-x: hidden !important;
+  transition: 0.5s ease;
+}
+.sidebardiv2 {
+  width: 25% !important;
+  overflow-x: hidden !important;
+  transition: 0.5s ease;
+}
+.sidebar ul {
+  width: 500px !important;
+}
+.sidebar i,
+.sidebar li {
+  transition: 0.2s ease;
 }
