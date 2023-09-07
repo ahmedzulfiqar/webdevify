@@ -118,6 +118,12 @@ body {
   width: 500px !important;
 }
 .sidebar i,
-.sidebar li {
-  transition: 0.2s ease;
+.sidebar .hoveri span {
+  transition: 0.5s ease;
+}
+.sidebar .hoveri:hover span {
+  color: var(--lesspurple) !important;
+}
+.sidebar .hoveri:hover i {
+  color: var(--lesspurple) !important;
 }

@@ -5,57 +5,15 @@ function Sidebarcomp({ open }) {
     {
       head: "SOCIAL",
       list: [
-        { head: "News Feed", para: {} },
-        { head: "News Feed", para: {} },
-        { head: "News Feed", para: {} },
-        { head: "News Feed", para: {} },
-        { head: "News Feed", para: {} },
-        { head: "News Feed", para: {} },
-        { head: "News Feed", para: {} },
-        { head: "News Feed", para: {} },
-        { head: "News Feed", para: {} },
-      ],
-    },
-    {
-      head: "SOCIAL",
-      list: [
-        { head: "News Feed", para: {} },
-        { head: "News Feed", para: {} },
-        { head: "News Feed", para: {} },
-        { head: "News Feed", para: {} },
-        { head: "News Feed", para: {} },
-        { head: "News Feed", para: {} },
-        { head: "News Feed", para: {} },
-        { head: "News Feed", para: {} },
-        { head: "News Feed", para: {} },
-      ],
-    },
-    {
-      head: "SOCIAL",
-      list: [
-        { head: "News Feed", para: {} },
-        { head: "News Feed", para: {} },
-        { head: "News Feed", para: {} },
-        { head: "News Feed", para: {} },
-        { head: "News Feed", para: {} },
-        { head: "News Feed", para: {} },
-        { head: "News Feed", para: {} },
-        { head: "News Feed", para: {} },
-        { head: "News Feed", para: {} },
-      ],
-    },
-    {
-      head: "SOCIAL",
-      list: [
-        { head: "News Feed", para: {} },
-        { head: "News Feed", para: {} },
-        { head: "News Feed", para: {} },
-        { head: "News Feed", para: {} },
-        { head: "News Feed", para: {} },
-        { head: "News Feed", para: {} },
-        { head: "News Feed", para: {} },
-        { head: "News Feed", para: {} },
-        { head: "News Feed", para: {} },
+        { head: "News Feed", icon: "fa-solid fa-newspaper" },
+        { head: "Profile", icon: "fa-solid fa-user" },
+        { head: "Friends", icon: "fa-solid fa-user-group" },
+        { head: "Notifcation", icon: "fa-solid fa-bell" },
+        { head: "Videos", icon: "fa-solid fa-video" },
+        { head: "Pictures", icon: "fa-solid fa-image" },
+        { head: "Liked Posts", icon: "fa-solid fa-thumbs-up" },
+        { head: "Chat", icon: "fa-solid fa-message" },
+        { head: "Saved", icon: "fa-solid fa-bookmark" },
       ],
     },
   ];
@@ -63,31 +21,36 @@ function Sidebarcomp({ open }) {
   return (
     <div className=" p-0 sidebar pe-5 ">
       <div
-        className={` p-0 pt-2  bg-blacks me-5 ${
+        className={` p-0 pt-2  bg-blacks me-5 h-100 ${
           !open ? "sidebardiv" : "sidebardiv2"
         }`}
       >
-        <ul class="  pt-lg-3 pt-5   h-100  fw-lighta p-0 ps-3 fd">
+        <ul class="  pt-lg-3 pt-5     fw-lighta p-0 ps-3 fd">
           {sampledata.map((i) => {
             return (
               <>
-                <li class={" text-light py-2 px-3 mt-3 h5 ps-md-1 ps-1 fw-lighta  "}>
+                <li
+                  class={
+                    " text-light py-2 px-3 mt-3 h5 ps-md-1 ps-1 fw-lighta  "
+                  }
+                >
                   {!open ? (
                     "SOCIAL"
                   ) : (
-                    <i class="fa fa-dot-circle text-purple" aria-hidden="true"></i>
+                    <i
+                      class="fa fa-dot-circle text-purple"
+                      aria-hidden="true"
+                    ></i>
                   )}
                 </li>
-                {i.list.map(() => {
+                {i.list.map((da) => {
                   return (
-                    <li class="text-start muted py-2 px-md-2 px-1 fw-lighta">
+                    <li class="text-start muted py-2 px-md-2 px-1 fw-lighta hoveri">
                       <i
-                        class={`fa fa-newspaper  muted ${
-                          open ? "pe-5" : "pe-4"
-                        }`}
+                        class={`${da.icon}  muted ${open ? "pe-5" : "pe-4"}`}
                         aria-hidden="true"
                       ></i>
-                      <span className="fw-lighta  muted ">News Feed</span>
+                      <span className="fw-lighta  muted ">{da.head}</span>
                     </li>
                   );
                 })}
