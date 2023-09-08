@@ -20,10 +20,10 @@ function Navbar({ setopen, open }) {
     };
   }, []);
   return (
-    <div className="col-12 p-0">
+    <div className="col-12 p-0 m-0">
       <nav
-        class={`navbar mynavbar navbar-expand-sm bg-blacks text-light fixed-top px-md-3 px-1 shadow ${
-          !Scrolled ? "py-4 pb-md-4 pb-0" : "py-3 pb-md-3 pb-0"
+        class={`navbar mynavbar navbar-expand-sm bg-blacks text-light px-md-3 px-1 shadow ${
+          !Scrolled ? "py-md-4 pb-md-4 py-3 pb-0" : "py-md-4 pb-md-4 py-3 pb-0"
         }`}
       >
         <div class="container-fluid">
@@ -69,7 +69,7 @@ function Navbar({ setopen, open }) {
         </div>
         <div class="d-md-none d-block mt-3 w-100 bg-black py-3">
           <div className="row m-0 justify-content-between px-3">
-            <i class="fa fa-home text-purple col-2" aria-hidden="true"></i>
+            <i class="fa fa-home text-purple col-2" aria-hidden="true" ></i>
             <i class="fa-solid fa-user-group text-purple col-2"></i>
             <i class="fa-solid fa-bell text-purple col-2 "></i>
             <i class="fa fa-envelope text-purple  col-2"></i>

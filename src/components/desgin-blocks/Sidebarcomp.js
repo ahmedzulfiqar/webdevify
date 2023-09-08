@@ -19,23 +19,21 @@ function Sidebarcomp({ open }) {
   ];
   console.log(open);
   return (
-    <div className=" p-0 sidebar pe-5 ">
+    <div className=" p-0 sidebar pe-md-5 col-lg-2  ">
       <div
-        className={` p-0 pt-2  bg-blacks me-5 h-100 ${
+        className={` p-0 pt-0  bg-blacks  h-100 ${
           !open ? "sidebardiv" : "sidebardiv2"
         }`}
       >
-        <ul class="  pt-lg-3 pt-5     fw-lighta p-0 ps-3 fd">
+        <ul class="  pt-lg-3 pt-3     fw-lighta p-0 ps-3 fd">
           {sampledata.map((i) => {
             return (
               <>
                 <li
-                  class={
-                    " text-light py-2 px-3 mt-3 h5 ps-md-1 ps-1 fw-lighta  "
-                  }
+                  class={" text-light py-2 px-3 mt-0 h5 ps-md-1 ps-2 fw-lighta"}
                 >
                   {!open ? (
-                    "SOCIAL"
+                    <span className="text-purple">SOCIAL</span>
                   ) : (
                     <i
                       class="fa fa-dot-circle text-purple"
@@ -45,7 +43,7 @@ function Sidebarcomp({ open }) {
                 </li>
                 {i.list.map((da) => {
                   return (
-                    <li class="text-start muted py-2 px-md-2 px-1 fw-lighta hoveri">
+                    <li class="text-start muted py-2 px-md-2 px-2 fw-lighta hoveri">
                       <i
                         class={`${da.icon}  muted ${open ? "pe-5" : "pe-4"}`}
                         aria-hidden="true"
