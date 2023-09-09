@@ -12,7 +12,7 @@
 }
 :root {
   --purple: #8755f2;
-  --lesspurple: #8755f2c4;
+  --lesspurple: #8755f246;
   --dark: #0f0f0f;
   --lessdark: #0f0f0fa1;
   --grey: #1a1a1a;
@@ -113,11 +113,15 @@ body {
   overflow-x: hidden !important;
   transition: 0.5s ease;
   max-width: 100vw !important;
+
+  z-index: 100 !important;
 }
 .sidebardiv2 {
   width: 60px !important;
   overflow-x: hidden !important;
   max-width: 100vw !important;
+
+  z-index: 100 !important;
   transition: 0.5s ease;
 }
 .sidebar ul {
@@ -135,20 +139,59 @@ body {
   color: var(--lesspurple) !important;
 }
 
-@media screen and (max-width: 1000px) {
+@media screen and (max-width: 1100px) {
   .sidebar {
-    height: 93.3vh;
+    height: 0 !important;
+    overflow-y: scroll;
     position: fixed !important;
     margin-top: 73px !important;
-    overflow-y: scroll;
+    z-index: 1000;
+    width: 0 !important;
+  }
+  .mynavbarimg {
+    width: 2.7rem !important;
+    height: 100% !important;
+  }
+  .sidebardiv {
+    width: 100% !important;
+    overflow-x: hidden !important;
+    transition: 0.5s ease;
+    max-width: 100vw !important;
+    position: fixed !important;
+    z-index: 100 !important;
+  }
+  .sidebardiv2 {
+    width: 60px !important;
+    overflow-x: hidden !important;
+    max-width: 100vw !important;
+    position: fixed !important;
+    z-index: 100 !important;
+    transition: 0.5s ease;
   }
 }
 @media screen and (max-width: 600px) {
   .sidebar {
-    height: 93.3vh;
+    height: 0 !important;
     overflow-y: scroll;
     position: fixed !important;
     margin-top: 123px !important;
+    z-index: 1000;
+    width: 0 !important;
+  }  .sidebardiv {
+    width: 100% !important;
+    overflow-x: hidden !important;
+    transition: 0.5s ease;
+    max-width: 100vw !important;
+    position: fixed !important;
+    z-index: 100 !important;
+  }
+  .sidebardiv2 {
+    width: 60px !important;
+    overflow-x: hidden !important;
+    max-width: 100vw !important;
+    position: fixed !important;
+    z-index: 100 !important;
+    transition: 0.5s ease;
   }
 }
 /********************************************* MAIN-CONTENT-CSS *********************************************/
@@ -156,11 +199,10 @@ body {
   height: 90vh !important;
   overflow: hidden !important;
 }
-@media screen and (max-width: 800px) {
+@media screen and (max-width: 1100px) {
   .mainsec {
-  overflow: hidden !important;
-  height: 88vh !important;
-
-  padding-left: 70px !important;
+    overflow: hidden !important;
+    height: 88vh !important;
+    padding-left: 70px !important;
   }
 }

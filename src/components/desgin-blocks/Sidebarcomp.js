@@ -19,7 +19,7 @@ function Sidebarcomp({ open }) {
   ];
   console.log(open);
   return (
-    <div className=" p-0 sidebar pe-md-5 col-lg-2  ">
+    <div className=" p-0 sidebar pe-md-5 col-xl-2 col-lg-5 col-md-5  ">
       <div
         className={` p-0 pt-0  bg-blacks  h-100 ${
           !open ? "sidebardiv" : "sidebardiv2"

@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-
+import profile from "../media/me.jpg";
 function Navbar({ setopen, open }) {
   const [Scrolled, setScrolled] = useState(false);
   useEffect(() => {
@@ -35,7 +35,7 @@ function Navbar({ setopen, open }) {
             <i
               class={
                 open
-                  ? "fa-solid fa-bars fa-rotate-90 display-6"
+                  ? "fa-solid fa-bars fa-rotate-180 display-6"
                   : "fa-solid fa-xmark  display-6"
               }
             ></i>
@@ -44,7 +44,7 @@ function Navbar({ setopen, open }) {
             <i class="fa-brands fa-slack px-2"></i>
             Webdevify
           </a>
-          <div class=" justify-content-end algin-self-center ms-auto me-5 d-md-block d-none">
+          <div class=" justify-content-end algin-self-center ms-auto me-5 pre d-md-block d-none">
             <ul class="navbar-nav">
               <li class="nav-item mx-md-3">
                 <i class="fa fa-home text-purple " aria-hidden="true"></i>
@@ -61,15 +61,15 @@ function Navbar({ setopen, open }) {
             </ul>
           </div>
           <img
-            src="https://templates.iqonic.design/socialv/bs5/html/dist/assets/images/user/1.jpg"
+            src={profile}
             alt=""
             className="img-fluid rounded-circle mynavbarimg pt-0"
           />
-          <div className="ms-md-2 d-md-block d-none"> Ahmed Zulfiqar</div>
+          <div className="ms-md-3 d-md-block d-none"> Ahmed Zulfiqar</div>
         </div>
         <div class="d-md-none d-block mt-3 w-100 bg-black py-3">
           <div className="row m-0 justify-content-between px-3">
-            <i class="fa fa-home text-purple col-2" aria-hidden="true" ></i>
+            <i class="fa fa-home text-purple col-2" aria-hidden="true"></i>
             <i class="fa-solid fa-user-group text-purple col-2"></i>
             <i class="fa-solid fa-bell text-purple col-2 "></i>
             <i class="fa fa-envelope text-purple  col-2"></i>
