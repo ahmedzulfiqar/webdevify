@@ -7,7 +7,7 @@ function Createpost() {
         <div class="card-header text-light display-6 fw-lighta py-md-3 py-2 border-bottom border-dark border-2">
           Create Post
         </div>
-        <div class="card-body d-sm-flex d-block py-md-4 py-2">
+        <div class="card-body d-flex d-block py-md-4 py-2">
           <div className="d-flex w-100">
             <img
               src={profile}
@@ -20,7 +20,7 @@ function Createpost() {
               placeholder="Write Something"
             />
           </div>
-          <div className="btn bg-purpleless text-purple mt-sm-0 mt-2 d-grid pt-sm-2 pb-sm-0 py-0">
+          <div className="btn bg-purpleless text-purple mt-0 d-grid pt-md-2 pb-1 ">
             POST
           </div>
         </div>
