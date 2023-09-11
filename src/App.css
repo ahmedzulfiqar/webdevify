@@ -212,7 +212,7 @@ body {
 @media screen and (max-width: 600px) {
   .mainsec {
     overflow: scroll !important;
-    height: 88vh !important;
+    height: 83vh !important;
     padding-left: 0 !important;
   }
 }
@@ -222,14 +222,16 @@ body {
   font-size: 0.8rem;
 }
 .imgwidth {
+  height: 50vh;
   overflow: hidden !important;
 }
 .imgwidth img {
   width: 100% !important;
   height: 100% !important;
 }
-@media screen and (max-width:600px) {
+@media screen and (max-width: 600px) {
   .imgwidth {
+    height:50vh;
     overflow: hidden !important;
   }
   .imgwidth img {

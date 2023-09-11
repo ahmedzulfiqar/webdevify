@@ -4,7 +4,7 @@ function Postbody() {
   const [more, setmore] = useState(true);
 
   return (
-    <div class="card bg-blacks">
+    <div class="card bg-blacks mt-3">
       <div class="card-body fontcahnge px-md-3 px-2 py-md-3 py-2">
         <div class="d-flex flex-start align-items-center mx-auto">
           <img
