@@ -8,7 +8,7 @@ function Createpost() {
           Create Post
         </div>
 
-        <div class="card-body d-flex d-block py-md-4 py-2">
+        <div class="card-body d-flex d-block py-md-2 py-2">
           <div className="d-flex w-100">
             <img
               src={profile}
@@ -17,7 +17,7 @@ function Createpost() {
             />
             <input
               type="text"
-              className="bg-transparent ps-3 border-0 text-white w-100  fs-6"
+              className="bg-transparent ps-3 border-0 text-white w-100"
               placeholder="Write Something"
             />
           </div>
@@ -42,7 +42,7 @@ function Createpost() {
           </div>
         </div>
       </div>
-      <div className="card bg-blacks border-0 shadow d-sm-none d-block">
+      <div className="card bg-blacks border-0 shadow d-sm-none d-block px-1 py-2">
         <div class="card-header text-light h6 fw-lighta py-md-3 py-2 border-bottom border-dark border-2 d-sm-none d-block">
           Create Post
         </div>

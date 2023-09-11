@@ -23,6 +23,7 @@
 }
 ::-webkit-scrollbar {
   display: none;
+  scroll-behavior: smooth !important;
 }
 body {
   overflow: hidden !important;
@@ -90,7 +91,7 @@ body {
 /********************************************* NAVBAR-CSS *********************************************/
 
 .mynavbar {
-  transition: 0.5s ease;
+  transition: 1s ease;
 }
 .mynavbarimg {
   width: 2.7rem !important;
@@ -109,9 +110,9 @@ body {
   overflow-y: scroll;
 }
 .sidebardiv {
-  width: 100% !important;
+  width: 150% !important;
   overflow-x: hidden !important;
-  transition: 0.5s ease;
+  transition: 1s ease;
   max-width: 100vw !important;
 
   z-index: 100 !important;
@@ -122,7 +123,7 @@ body {
   max-width: 100vw !important;
 
   z-index: 100 !important;
-  transition: 0.5s ease;
+  transition: 1s ease;
 }
 .sidebar ul {
   width: 300px !important;
@@ -155,18 +156,18 @@ body {
   .sidebardiv {
     width: 100% !important;
     overflow-x: hidden !important;
-    transition: 0.5s ease;
+    transition: 1s ease;
     max-width: 100vw !important;
     position: fixed !important;
     z-index: 100 !important;
   }
   .sidebardiv2 {
-    width: 00px !important;
+    width: 60px !important;
     overflow-x: hidden !important;
     max-width: 100vw !important;
     position: fixed !important;
     z-index: 100 !important;
-    transition: 0.5s ease;
+    transition: 1s ease;
   }
 }
 @media screen and (max-width: 600px) {
@@ -177,36 +178,62 @@ body {
     margin-top: 118px !important;
     z-index: 1000;
     width: 0 !important;
-  }  .sidebardiv {
+  }
+  .sidebardiv {
     width: 100% !important;
     overflow-x: hidden !important;
-    transition: 0.5s ease;
+    transition: 1s ease;
     max-width: 100vw !important;
     position: fixed !important;
     z-index: 100 !important;
   }
   .sidebardiv2 {
-    width: 00px !important;
+    width: 0px !important;
     overflow-x: hidden !important;
     max-width: 100vw !important;
     position: fixed !important;
     z-index: 100 !important;
-    transition: 0.5s ease;
+    transition: 1s ease;
   }
 }
 /********************************************* MAIN-CONTENT-CSS *********************************************/
 .mainsec {
   height: 90vh !important;
-  overflow: hidden !important;
+  overflow: scroll !important;
 }
+
 @media screen and (max-width: 1100px) {
   .mainsec {
-    overflow: hidden !important;
+    overflow: scroll !important;
     height: 88vh !important;
+    padding-left: 63px !important;
+  }
+}
+@media screen and (max-width: 600px) {
+  .mainsec {
+    overflow: scroll !important;
+    height: 88vh !important;
+    padding-left: 0 !important;
   }
 }
 /********************************************* POST-CONTENT-CSS *********************************************/
 
-.fontcahnge{
-  font-size: .8rem;
+.fontcahnge {
+  font-size: 0.8rem;
+}
+.imgwidth {
+  overflow: hidden !important;
+}
+.imgwidth img {
+  width: 100% !important;
+  height: 100% !important;
+}
+@media screen and (max-width:600px) {
+  .imgwidth {
+    overflow: hidden !important;
+  }
+  .imgwidth img {
+    width: 100% !important;
+    height: 100% !important;
+  }
 }
