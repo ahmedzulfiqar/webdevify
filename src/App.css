@@ -222,7 +222,7 @@ body {
   font-size: 0.8rem;
 }
 .imgwidth {
-  height: 50vh;
+  height: 30rem;
   overflow: hidden !important;
 }
 .imgwidth img {
@@ -231,7 +231,7 @@ body {
 }
 @media screen and (max-width: 600px) {
   .imgwidth {
-    height:50vh;
+    height:15rem;
     overflow: hidden !important;
   }
   .imgwidth img {

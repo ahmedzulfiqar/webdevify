@@ -1,11 +1,11 @@
 import React, { useState } from "react";
 import profile from "../media/me.jpg";
-function Postbody() {
+function Postbody({image}) {
   const [more, setmore] = useState(true);
 
   return (
     <div class="card bg-blacks mt-3">
-      <div class="card-body fontcahnge px-md-3 px-2 py-md-3 py-2">
+      <div class="card-body fontcahnge px-md-3 px-2 py-md-3 py-3">
         <div class="d-flex flex-start align-items-center mx-auto">
           <img
             class="rounded-1 mynavbarimg shadow-1-strong me-3"
@@ -38,9 +38,9 @@ function Postbody() {
         </b>
         <div className="card-images mt-md-3 mt-3  text-center imgwidth">
           <img
-            src="http://localhost:3000/webdevify/static/media/me.60920bcd0486c3eb26c4.jpg"
+            src={image}
             alt=""
-            className=" img-fluid rounded-3"
+            className=" img-fluid rounded-1"
           />
         </div>
 
