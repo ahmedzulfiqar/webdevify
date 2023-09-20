@@ -262,7 +262,10 @@ body {
 .sad {
   transform: translateY(2px) !important;
 }
-
+.setcardfooter {
+  height: 30vh;
+  overflow: scroll;
+}
 @media screen and (max-width: 600px) {
   .imgwidth {
     height: 15rem;
@@ -271,6 +274,19 @@ body {
   .imgwidth img {
     width: 100% !important;
     height: 100% !important;
+  }
+  .setcardfooter {
+    height: 15vh;
+    overflow: scroll;
+    scroll-snap-type: y mandatory;
+  }
+
+  .setcardfooter .comment {
+    scroll-snap-align: start;
+    height: 100%;
+  }
+  .comment img{
+    height: 50% !important;
   }
 }
 .rotate {
@@ -283,8 +299,4 @@ body {
 }
 .sad {
   transform: translateY(2px) !important;
-}
-.setcardfooter{
-  height: 40vh;
-  overflow: scroll;
 }

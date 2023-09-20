@@ -90,7 +90,7 @@ function Postbody({ image }) {
           </div>
         </div>
         {comments && (
-          <div className="card-footer aniamtetime py-md-2 py-3  px-md-3 px-1 mt-md-3 ">
+          <div className="card-footer aniamtetime pt-md-2 pt-3 pb-0  px-md-0 px-1 mt-md-3  ">
             <div className="setcardfooter">
               <Comment />
               <Comment />
@@ -98,6 +98,19 @@ function Postbody({ image }) {
               <Comment />
               <Comment />
               <Comment />
+            </div>
+            <div class="card-footer border-purple   text-muted d-flex justify-content-start align-items-center px-3 my-3">
+              <input
+                type="text"
+                class="bg-transparent border-0 fw-lighta w-100 text-light  "
+                placeholder="Type message"
+              />
+              <a class="ms-1 text-muted" href="#!">
+                <i class="fas fa-image "></i>
+              </a>
+              <a class="ms-3 link-info" href="#!">
+                <i class="fas fa-paper-plane"></i>
+              </a>
             </div>
           </div>
         )}

@@ -2,7 +2,7 @@ import React from "react";
 import profile from "../media/me.jpg";
 function Comment() {
   return (
-    <div class="d-flex flex-start   mb-md-3 mb-4 ">
+    <div class="d-flex comment flex-start   mb-md-3 mb-4 ">
       <img
         class="rounded-1 mynavbarimg shadow-1-strong me-3 "
         src={profile}
