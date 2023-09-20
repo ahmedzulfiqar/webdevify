@@ -1,11 +1,13 @@
 import React, { useState } from "react";
 import profile from "../media/me.jpg";
-function Postbody({image}) {
+import Comment from "./Comment";
+function Postbody({ image }) {
   const [more, setmore] = useState(true);
-
+  const [like, setlike] = useState(false);
+  const [comments, setcomments] = useState(false);
   return (
     <div class="card bg-blacks mt-3">
-      <div class="card-body fontcahnge px-md-3 px-2 py-md-3 py-3">
+      <div class="card-body fontcahnge px-md-3 px-2 pt-md-3 pt-3 pb-0">
         <div class="d-flex flex-start align-items-center mx-auto">
           <img
             class="rounded-1 mynavbarimg shadow-1-strong me-3"
@@ -26,9 +28,9 @@ function Postbody({image}) {
           Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
           eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad
           minim veniam, quis nostrud exercitation ullamco laboris nisi ut
-          aliquip consequat.  Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-          eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad
-          minim veniam, quis nostru.
+          aliquip consequat. Lorem ipsum dolor sit amet, consectetur adipiscing
+          elit, sed do eiusmod tempor incididunt ut labore et dolore magna
+          aliqua. Ut enim ad minim veniam, quis nostru.
         </p>
         <b
           className="text-purple pointer  p-0 m-0 fontcahnge text-start"
@@ -37,26 +39,68 @@ function Postbody({image}) {
           {more ? "show More" : "show Less"}
         </b>
         <div className="card-images mt-md-3 mt-3  text-center imgwidth">
-          <img
-            src={image}
-            alt=""
-            className=" img-fluid rounded-1"
-          />
+          <img src={image} alt="" className=" img-fluid rounded-1" />
         </div>
-
-        <div class="small d-flex justify-content-start text-light fw-lighta mt-3">
-          <a href="#!" class="d-flex align-items-center me-3  text-light">
-            <i class="far fa-thumbs-up me-2"></i>
-            <p class="mb-0">Like</p>
-          </a>
-          <a
-            href="#!"
-            class="d-flex align-items-center me-3  text-light fw-lighta"
-          >
-            <i class="far fa-comment-dots me-2"></i>
-            <p class="mb-0">Comment</p>
-          </a>
+        <div className="card-footer py-md-2 py-0">
+          <div className="row m-0 p-0 justify-content-between ">
+            <div className="col-md-3 col-3 p-0 d-flex  text-center pointer ">
+              <div className="m-0 p-0 rotate " onClick={() => setlike(!like)}>
+                <lord-icon
+                  src="https://cdn.lordicon.com/qxjdtzah.json"
+                  trigger="click"
+                  colors={
+                    like
+                      ? "primary:#12a3f1,secondary:#fff"
+                      : "primary:#fff,secondary:#fff"
+                  }
+                ></lord-icon>
+              </div>
+              <div className="align-self-center text-light fw-lighta ms-md-2 ms-1 my-0 p-0 ">
+                {" "}
+                140 <span className="d-md-inline d-none fw-lighta"> Like</span>
+              </div>
+            </div>
+            <div
+              className={`col-3 p-0 text-light fw-lighta text-center   align-self-center pointer ${
+                comments && "text-purple"
+              } `}
+              onClick={() => setcomments(!comments)}
+            >
+              <i
+                class={`fa-solid fa-comment sad  fs-6 me-md-2 me-1 my-0 py-0  ${
+                  comments && "text-purple"
+                } `}
+                aria-hidden="true"
+              ></i>
+              <span
+                className={`align-self-center fw-lighta  m-0 p-0 d-md-inline d-none`}
+              >
+                Comment
+              </span>
+            </div>
+            <div className="col-3 p-0 text-light fw-lighta text-center   align-self-center pointer ">
+              <i
+                class="fa-solid fa-bookmark sad  fs-6 me-md-2 me-1 my-0 py-0"
+                aria-hidden="true"
+              ></i>
+              <span className="align-self-center fw-lighta  m-0 p-0  d-md-inline d-none">
+                Save
+              </span>
+            </div>
+          </div>
         </div>
+        {comments && (
+          <div className="card-footer aniamtetime py-md-2 py-3  px-md-3 px-1 mt-md-3 ">
+            <div className="setcardfooter">
+              <Comment />
+              <Comment />
+              <Comment />
+              <Comment />
+              <Comment />
+              <Comment />
+            </div>
+          </div>
+        )}
       </div>
     </div>
   );

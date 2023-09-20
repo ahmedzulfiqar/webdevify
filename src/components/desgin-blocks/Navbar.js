@@ -29,7 +29,7 @@ function Navbar({ setopen, open }) {
         <div class="container-fluid">
           {" "}
           <div
-            class=" justify-content-end algin-self-center setwi me-3 "
+            class=" justify-content-end algin-self-center setwi me-3 d-lg-none d-block "
             onClick={() => setopen(!open)}
           >
             <i

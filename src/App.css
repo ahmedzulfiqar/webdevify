@@ -30,15 +30,36 @@ body {
 }
 .fw-lighta {
   font-family: calibri light !important;
-  letter-spacing: 2px;
+  letter-spacing: 1px;
 }
 .specific {
   height: 100vh !important;
   overflow: hidden !important;
 }
+.pointer {
+  cursor: pointer !important;
+}
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+.display-1,
+.display-2,
+.display-3,
+.display-4,
+.display-5,
+.display-6,
+.fw-lighta,
+.small,
+span {
+  user-select: none;
+}
 /********************************************* COLORS-CSS *********************************************/
 .muted {
-  color: #777d74 !important;
+  color: #74747d !important;
 }
 /*Black*/
 
@@ -222,20 +243,48 @@ body {
   font-size: 0.8rem;
 }
 .imgwidth {
-  height: 30rem;
+  height: auto !important;
   overflow: hidden !important;
+  max-height: 50vh !important;
 }
 .imgwidth img {
   width: 100% !important;
-  height: 100% !important;
+  height: auto !important;
 }
+.rotate {
+  transform: rotateZ(180deg) rotateY(180deg) translateY(2px);
+  cursor: pointer;
+}
+.rotate * {
+  padding: 0 !important;
+  margin: 0 !important;
+}
+.sad {
+  transform: translateY(2px) !important;
+}
+
 @media screen and (max-width: 600px) {
   .imgwidth {
-    height:15rem;
+    height: 15rem;
     overflow: hidden !important;
   }
   .imgwidth img {
     width: 100% !important;
     height: 100% !important;
   }
+}
+.rotate {
+  transform: rotateZ(180deg) rotateY(180deg) translateY(2px);
+  cursor: pointer;
+}
+.rotate * {
+  padding: 0 !important;
+  margin: 0 !important;
+}
+.sad {
+  transform: translateY(2px) !important;
+}
+.setcardfooter{
+  height: 40vh;
+  overflow: scroll;
 }
