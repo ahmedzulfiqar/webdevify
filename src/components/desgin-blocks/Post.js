@@ -3,7 +3,7 @@ import profile from "../media/me.jpg";
 import Postbody from "./Postbody";
 function Post() {
   return (
-    <div className="col-12 p-0 mt-md-3 mt-2">
+    <div className="col-12 p-0 mt-md-2 mt-1">
       <Postbody
         image={
           "https://images.unsplash.com/photo-1607888110208-d32234404f3c?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1974&q=80"

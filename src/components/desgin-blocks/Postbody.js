@@ -1,12 +1,13 @@
 import React, { useState } from "react";
 import profile from "../media/me.jpg";
 import Comment from "./Comment";
+import Commentreply from "./Commentreply";
 function Postbody({ image }) {
   const [more, setmore] = useState(true);
   const [like, setlike] = useState(false);
   const [comments, setcomments] = useState(false);
   return (
-    <div class="card bg-blacks mt-3">
+    <div class="card bg-blacks mb-3">
       <div class="card-body fontcahnge px-md-3 px-2 pt-md-3 pt-3 pb-0">
         <div class="d-flex flex-start align-items-center mx-auto">
           <img

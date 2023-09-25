@@ -4,7 +4,7 @@ function Createpost() {
   return (
     <div className="col-12  p-0 ">
       <div className="card bg-blacks border-0 shadow d-sm-block d-none">
-        <div class="card-header text-light display-6 fw-lighta py-md-3 py-2 border-bottom border-dark border-2 d-sm-block d-none">
+        <div class="card-header text-light fs-3 fw-lighta py-md-2 py-2 border-bottom border-dark border-2 d-sm-block d-none">
           Create Post
         </div>
 
@@ -17,7 +17,7 @@ function Createpost() {
             />
             <input
               type="text"
-              className="bg-transparent ps-3 border-0 text-white w-100"
+              className="bg-transparent ps-3 border-0 text-light w-100 fw-lighta small"
               placeholder="Write Something"
             />
           </div>
@@ -57,7 +57,7 @@ function Createpost() {
             />
             <input
               type="text"
-              className="bg-transparent ps-3 border-0 text-white w-100  fs-6"
+              className="bg-transparent ps-3 border-0 text-white w-100  small fw-lighta"
               placeholder="Write Something"
             />
           </div>
