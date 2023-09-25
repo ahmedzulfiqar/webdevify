@@ -16,7 +16,7 @@ function Postbody({ image }) {
             alt="avatar"
           />
           <div>
-            <h6 class="fw-bold text-light mb-1">Lily Coleman</h6>
+            <h6 class="fw-bold text-light mb-1">Ahmed Zulfiqar</h6>
             <p class="text-purple small mb-0">Just Now</p>
           </div>
         </div>
