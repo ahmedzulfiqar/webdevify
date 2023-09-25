@@ -14,7 +14,7 @@
   --purple: #8755f2;
   --lesspurple: #8755f246;
   --dark: #0f0f0f;
-  --lessdark: #0f0f0fa1;
+  --lessdark: #0f0f0fe1;
   --grey: #1a1a1a;
 }
 .absolute {
@@ -133,7 +133,7 @@ body {
 .sidebardiv {
   width: 150% !important;
   overflow-x: hidden !important;
-  transition: .5s ease;
+  transition: 0.5s ease;
   max-width: 100vw !important;
 
   z-index: 100 !important;
@@ -144,7 +144,7 @@ body {
   max-width: 100vw !important;
 
   z-index: 100 !important;
-  transition: .5s ease;
+  transition: 0.5s ease;
 }
 .sidebar ul {
   width: 300px !important;
@@ -177,7 +177,7 @@ body {
   .sidebardiv {
     width: 100% !important;
     overflow-x: hidden !important;
-    transition: .5s ease;
+    transition: 0.5s ease;
     max-width: 100vw !important;
     position: fixed !important;
     z-index: 100 !important;
@@ -188,7 +188,7 @@ body {
     max-width: 100vw !important;
     position: fixed !important;
     z-index: 100 !important;
-    transition: .5s ease;
+    transition: 0.5s ease;
   }
 }
 @media screen and (max-width: 600px) {
@@ -203,7 +203,7 @@ body {
   .sidebardiv {
     width: 100% !important;
     overflow-x: hidden !important;
-    transition: .5s ease;
+    transition: 0.5s ease;
     max-width: 100vw !important;
     position: fixed !important;
     z-index: 100 !important;
@@ -214,7 +214,7 @@ body {
     max-width: 100vw !important;
     position: fixed !important;
     z-index: 100 !important;
-    transition: .5s ease;
+    transition: 0.5s ease;
   }
 }
 /********************************************* MAIN-CONTENT-CSS *********************************************/
@@ -321,4 +321,18 @@ body {
 }
 .sad {
   transform: translateY(2px) !important;
+}
+.loader {
+  height: 100vh !important;
+  width: 100vw !important;
+  position: relative;
+  z-index: 2;
+}
+.a {
+}
+svg {
+  position: absolute !important;
+  top: 46% !important;
+  left: 50% !important;
+  transform: translate(-50%, -50%) !important;
 }

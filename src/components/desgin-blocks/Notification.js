@@ -1,5 +1,6 @@
 import React from "react";
 import Profile from "./Profile";
+import Profile2 from "./Profile2";
 function Notifications() {
   return (
     <div className="col-12 p-0">
@@ -11,22 +12,18 @@ function Notifications() {
 
         <div className=" p-0 m-0 py-1 mt-2">
           <div class="card-footer   py-md-1  py-1 px-4 myfriendsscrol my-2">
-            <Profile />
-            <Profile />
-            <Profile />
-            <Profile />
-            <Profile />
-            <Profile />
-            <Profile />
-            <Profile />
-            <Profile />
-            <Profile />
-            <Profile />
-            <Profile />
-            <Profile />
-            <Profile />
-            <Profile />
-            <Profile />
+            <Profile2 />
+            <Profile2 />
+            <Profile2 />
+            <Profile2 />
+            <Profile2 />
+            <Profile2 />
+            <Profile2 />
+            <Profile2 />
+             <Profile2 />
+            <Profile2 />
+            <Profile2 />
+            <Profile2 />
           </div>
         </div>
       </div>
