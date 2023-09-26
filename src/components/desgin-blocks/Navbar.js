@@ -80,6 +80,7 @@ function Navbar({ setopen, open }) {
             alt=""
             className="img-fluid rounded-circle mynavbarimg pt-0"
           />
+      
           <div className="ms-md-3 d-md-block d-none"> Ahmed Zulfiqar</div>
         </div>
         <div class="d-md-none d-block mt-3 w-100 bg-black py-3">

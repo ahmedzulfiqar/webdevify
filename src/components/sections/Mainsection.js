@@ -15,7 +15,6 @@ function Mainsection({ open }) {
       <Routes>
         <Route
           path="/"
-          
           element={
             <>
               <Middlecover>
@@ -23,6 +22,7 @@ function Mainsection({ open }) {
                   <div className="row m-0 p-0">
                     <Createpost />
                     <Post />
+                    
                   </div>
                 </div>
                 <div className="col-xl-4 col-md-5 h-100 d-md-block d-none">

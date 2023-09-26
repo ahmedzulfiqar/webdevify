@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import profile from "../media/me.jpg";
 import Comment from "./Comment";
 import Commentreply from "./Commentreply";
-function Postbody({ image,index }) {
+function Textpostbody() {
   const [more, setmore] = useState(true);
   const [like, setlike] = useState(false);
   const [comments, setcomments] = useState(false);
@@ -11,7 +11,7 @@ function Postbody({ image,index }) {
       <div class="card-body fontcahnge px-md-3 px-2 pt-md-3 pt-3 pb-0">
         <div class="d-flex flex-start align-items-center mx-auto">
           <img
-            class="rounded-1 mynavbarimg shadow-1-strong me-3 "
+            class="rounded-1 mynavbarimg shadow-1-strong me-3"
             src={profile}
             alt="avatar"
           />
@@ -20,31 +20,8 @@ function Postbody({ image,index }) {
             <p class="text-purple small mb-0">Just Now</p>
           </div>
         </div>
-        <div
-          class="modal fade"
-          id={`exampleModal${index}`}
-          tabindex="-1"
-          aria-labelledby="exampleModalLabel"
-          aria-hidden="true"
-        >
-          <div class="modal-dialog modal-dialog-centered">
-            <div className="card-images mt-md-3 mt-3  text-center imgwidth">
-              <img
-                src={image}
-                alt=""
-                className=" img-fluid rounded-1"
-                type="button"
-                data-bs-toggle="modal"
-                data-bs-target={`#exampleModal${index}`}
-              />
-            </div>
-          </div>
-        </div>
-        <p
-          class={`mt-md-3 mt-2  mb-0 pb-0 text-light  fw-lighta ${
-            more && " text-truncate"
-          }`}
-        >
+
+        <p class={`mt-md-3 mt-2  mb-0 pb-0 text-light  fw-lighta `}>
           Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
           eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad
           minim veniam, quis nostrud exercitation ullamco laboris nisi ut
@@ -52,22 +29,7 @@ function Postbody({ image,index }) {
           elit, sed do eiusmod tempor incididunt ut labore et dolore magna
           aliqua. Ut enim ad minim veniam, quis nostru.
         </p>
-        <b
-          className="text-purple pointer  p-0 m-0 fontcahnge text-start"
-          onClick={() => setmore(!more)}
-        >
-          {more ? "show More" : "show Less"}
-        </b>
-        <div className="card-images mt-md-3 mt-3  text-center imgwidth">
-          <img
-            src={image}
-            alt=""
-            className=" img-fluid rounded-1"
-            type="button"
-            data-bs-toggle="modal"
-            data-bs-target={`#exampleModal${index}`}
-          />
-        </div>
+
         <div className="card-footer py-md-2 py-0">
           <div className="row m-0 p-0 justify-content-between ">
             <div className="col-md-3 col-3 p-0 d-flex  text-center pointer ">
@@ -146,4 +108,4 @@ function Postbody({ image,index }) {
   );
 }
 
-export default Postbody;
+export default Textpostbody;

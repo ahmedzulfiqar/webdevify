@@ -23,6 +23,7 @@ function Createpost() {
           </div>
           <div className="btn bg-purpleless text-purple mt-0 d-grid pt-md-2 pb-1 ">
             POST
+            
           </div>
         </div>
         <div class="card-footer py-md-3 py-2 border-top border-dark border-2 px-1">

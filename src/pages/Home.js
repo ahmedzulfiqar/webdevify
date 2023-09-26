@@ -9,6 +9,7 @@ function Home() {
     <Homecover>
       <Navbar setopen={setopen} open={open} />
       <Sidebarcomp open={open} />
+    
       <Mainsection open={open} />
     </Homecover>
   );

@@ -11,16 +11,19 @@ function Myfriends() {
           ></i>{" "}
           My Friends
         </div>
+        <div className="fs-4 px-2 border-bottom border-secondary border-opacity-50 ps-4 py-2 text-light">
+          <span className="text-purple"> 23 </span> Friend
+        </div>
 
-   
-        <div className=" p-0 m-0 py-1 mt-2">
-          <div class="card-footer   py-md-1  py-1 px-4 myfriendsscrol my-2">
+        <div className=" p-0 m-0 py-0 mt-0">
+          <div class="card-footer   py-md-1  py-1 px-4 myfriendsscrol my-1">
             <Profile />
             <Profile />
             <Profile />
             <Profile />
             <Profile /> <Profile />
-            <Profile /><Profile />
+            <Profile />
+            <Profile />
             <Profile />
             <Profile /> <Profile />
             <Profile />
@@ -31,7 +34,6 @@ function Myfriends() {
           </div>
         </div>
       </div>
-      
     </div>
   );
 }
