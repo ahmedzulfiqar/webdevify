@@ -65,19 +65,19 @@ function Navbar({ setopen2, open2 }) {
                 <Link
                   class="fa fa-home text-purple "
                   aria-hidden="true"
-                  to={"/op"}
+                  to={"/webdevify"}
                 ></Link>
               </li>
               <li class="nav-item mx-md-3">
                 <Link
                   class="fa-solid fa-user-group text-purple "
-                  to={"/op/myfriends"}
+                  to={"/webdevify/myfriends"}
                 ></Link>
               </li>
               <li class="nav-item mx-md-3">
                 <Link
                   class="fa-solid fa-bell text-purple "
-                  to={"/op/notification"}
+                  to={"/webdevify/notification"}
                 ></Link>
               </li>
               <li class="nav-item mx-md-3">
@@ -147,7 +147,7 @@ function Navbar({ setopen2, open2 }) {
         </div>
         <div class="d-md-none d-block mt-2 w-100 bg-black py-3">
           <div className="row m-0 justify-content-between px-3">
-            <Link to={"/op"} className=" col-2 fa fa-home text-purple"></Link>
+            <Link to={"/webdevify"} className=" col-2 fa fa-home text-purple"></Link>
             <Link
               to={"/friends"}
               class="fa-solid fa-user-group text-purple col-2"
