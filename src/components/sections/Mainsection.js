@@ -15,7 +15,7 @@ function Mainsection({ open }) {
     <>
       <Routes>
         <Route
-          path="/"
+          path="/op"
           element={
             <>
               <Middlecover>
@@ -38,8 +38,8 @@ function Mainsection({ open }) {
             </>
           }
         >
-          <Route path="/myfriends" element={<Myfriends />} />
-          <Route path="/notification" element={<Notifications />} />
+          <Route path="/op/myfriends" element={<Myfriends />} />
+          <Route path="/op/notification" element={<Notifications />} />
           <Route index element={<Myfriends />} />
         </Route>
         <Route

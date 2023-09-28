@@ -14,7 +14,7 @@ function App() {
     }, 2000);
   }, []);
   useEffect(() => {
-    navigation("/");
+    navigation("/op");
   }, []);
   return (
     <div className="App">
