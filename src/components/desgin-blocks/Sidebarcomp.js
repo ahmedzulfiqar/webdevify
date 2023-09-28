@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 
-function Sidebarcomp({ open }) {
+function Sidebarcomp({ open2 }) {
   const sampledata = [
     {
       head: "SOCIAL",
@@ -17,12 +17,12 @@ function Sidebarcomp({ open }) {
       ],
     },
   ];
-  console.log(open);
+  console.log(open2);
   return (
     <div className=" p-0 sidebar pe-md-5 col-lg-2 col-md-5  ">
       <div
         className={` p-0 pt-0  bg-blacks  h-100 ${
-          !open ? "sidebardiv" : "sidebardiv2"
+          !open2 ? "sidebardiv" : "sidebardiv2"
         }`}
       >
         <ul class="  pt-lg-3 pt-3     fw-lighta p-0 ps-3 fd">
@@ -32,7 +32,7 @@ function Sidebarcomp({ open }) {
                 <li
                   class={" text-light py-2 px-3 mt-0 h5 ps-md-1 ps-2 fw-lighta"}
                 >
-                  {!open ? (
+                  {!open2 ? (
                     <span className="text-purple">SOCIAL</span>
                   ) : (
                     <i
@@ -45,7 +45,7 @@ function Sidebarcomp({ open }) {
                   return (
                     <li class="text-start text-light py-2 px-md-2 px-2 fw-lighta hoveri   ">
                       <i
-                        class={`${da.icon}  muted ${open ? "pe-5" : "pe-4"}`}
+                        class={`${da.icon}  muted ${open2 ? "pe-5" : "pe-4"}`}
                         aria-hidden="true"
                       ></i>
                       <span className="fw-lighta   ">{da.head}</span>

@@ -2,10 +2,15 @@ import React, { useState } from "react";
 import profile from "../media/me.jpg";
 import Comment from "./Comment";
 import Commentreply from "./Commentreply";
-function Postbody({ image,index }) {
+import Popover from "@mui/material/Popover";
+import Typography from "@mui/material/Typography";
+import Button from "@mui/material/Button";
+
+function Postbody({ image, index }) {
   const [more, setmore] = useState(true);
   const [like, setlike] = useState(false);
   const [comments, setcomments] = useState(false);
+
   return (
     <div class="card bg-blacks mb-3">
       <div class="card-body fontcahnge px-md-3 px-2 pt-md-3 pt-3 pb-0">
@@ -28,15 +33,60 @@ function Postbody({ image,index }) {
           aria-hidden="true"
         >
           <div class="modal-dialog modal-dialog-centered">
-            <div className="card-images mt-md-3 mt-3  text-center imgwidth">
-              <img
-                src={image}
-                alt=""
-                className=" img-fluid rounded-1"
-                type="button"
-                data-bs-toggle="modal"
-                data-bs-target={`#exampleModal${index}`}
-              />
+            <div class="card bg-black mb-3">
+              <div class="card-body fontcahnge px-md-3 px-2 py-md-3 py-3 ">
+                <div class="d-flex flex-start align-items-center mx-auto">
+                  <img
+                    class="rounded-1 mynavbarimg shadow-1-strong me-3 "
+                    src={profile}
+                    alt="avatar"
+                  />
+                  <div>
+                    <h6 class="fw-bold text-light mb-1">Ahmed Zulfiqar</h6>
+                    <p class="text-purple small mb-0">Just Now</p>
+                  </div>
+                </div>
+                <div
+                  class="modal fade"
+                  id={`exampleModal${index}`}
+                  tabindex="-1"
+                  aria-labelledby="exampleModalLabel"
+                  aria-hidden="true"
+                >
+                  <div class="modal-dialog modal-dialog-centered">
+                    <div className="card-images mt-md-3 mt-3  text-center imgwidth">
+                      <img
+                        src={image}
+                        alt=""
+                        className=" img-fluid rounded-1"
+                        type="button"
+                        data-bs-toggle="modal"
+                        data-bs-target={`#exampleModal${index}`}
+                      />
+                    </div>
+                  </div>
+                </div>
+                <p class={`mt-md-3 mt-2  mb-0 pb-0 text-light  fw-lighta `}>
+                  Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed
+                  do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+                  Ut enim ad minim veniam, quis nostrud exercitation ullamco
+                  laboris nisi ut aliquip consequat. Lorem ipsum dolor sit amet,
+                  consectetur adipiscing elit, sed do eiusmod tempor incididunt
+                  ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+                  quis nostru.
+                </p>
+
+                <div className="card-images mt-md-3 mt-3  text-center imgwidth">
+                  <img
+                    src={image}
+                    alt=""
+                    className=" img-fluid rounded-1"
+                    type="button"
+                    data-bs-toggle="modal"
+                    data-bs-target={`#exampleModal${index}`}
+                  />
+                </div>
+              </div>
             </div>
           </div>
         </div>

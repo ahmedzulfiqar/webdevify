@@ -10,7 +10,7 @@ function Profile() {
       />
       <div>
         <h6 class="fw-bold text-light mb-1">Waleed Zulfiqar</h6>
-        <p class="text-purple small mb-0">2 mutual friends</p>
+        <p class="text-purple fw-lighta small mb-0">2 mutual friends</p>
       </div>
     </div>
   );

@@ -4,12 +4,17 @@ import Appcover from "./components/covers/Appcover";
 import Home from "./pages/Home";
 import { useEffect, useState } from "react";
 import { LineWave, Triangle } from "react-loader-spinner";
+import { useNavigate, useNavigation } from "react-router-dom";
 function App() {
   const [complete, setcomplete] = useState(true);
+  const navigation = useNavigate();
   useEffect(() => {
     setTimeout(() => {
       setcomplete(!true);
-    }, 1000);
+    }, 2000);
+  }, []);
+  useEffect(() => {
+    navigation("/");
   }, []);
   return (
     <div className="App">

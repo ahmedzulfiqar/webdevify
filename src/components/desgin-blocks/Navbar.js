@@ -1,7 +1,10 @@
 import React, { useEffect, useState } from "react";
 import profile from "../media/me.jpg";
 import { Link } from "react-router-dom";
-function Navbar({ setopen, open }) {
+import Popover from "@mui/material/Popover";
+import Typography from "@mui/material/Typography";
+import Button from "@mui/material/Button";
+function Navbar({ setopen2, open2 }) {
   const [Scrolled, setScrolled] = useState(false);
   useEffect(() => {
     const handleScroll = () => {
@@ -20,6 +23,19 @@ function Navbar({ setopen, open }) {
       window.removeEventListener("scroll", handleScroll);
     };
   }, []);
+  const [anchorEl, setAnchorEl] = React.useState(null);
+
+  const handleClick = (event) => {
+    setAnchorEl(event.currentTarget);
+  };
+
+  const handleClose = () => {
+    setAnchorEl(null);
+  };
+
+  const open = Boolean(anchorEl);
+  const id = open ? "simple-popover" : undefined;
+
   return (
     <div className="col-12 p-0 m-0">
       <nav
@@ -38,15 +54,9 @@ function Navbar({ setopen, open }) {
           <a
             class="display-6 text-purple fw-bolder  d-md-none d-block "
             href="#"
-            onClick={() => setopen(!open)}
+            onClick={() => setopen2(!open2)}
           >
-            <i
-              class={
-                open
-                  ? "fa-brands fa-slack px-2 fa-rotate-90 setwi"
-                  : "fa-solid fa-xmark px-2 setwi"
-              }
-            ></i>
+            <i class={"fa-brands fa-slack pe-2 "}></i>
             Webdevify
           </a>
           <div class=" justify-content-end algin-self-center ms-auto me-5 pre ">
@@ -75,15 +85,64 @@ function Navbar({ setopen, open }) {
               </li>
             </ul>
           </div>
-          <img
-            src={profile}
-            alt=""
-            className="img-fluid rounded-circle mynavbarimg pt-0"
-          />
-      
+
+          <Button
+            aria-describedby={id}
+            className="bg-transparent"
+            onClick={handleClick}
+          >
+            <img
+              src={profile}
+              alt=""
+              className="img-fluid rounded-circle mynavbarimg pt-0"
+            />
+          </Button>
+          <Popover
+            id={id}
+            open={open}
+            anchorEl={anchorEl}
+            onClose={handleClose}
+            anchorOrigin={{
+              vertical: "bottom",
+              horizontal: "left",
+            }}
+          >
+            <Typography className="text-light border-0 text-start rounded-0 bg-blacks ms-5 ">
+              <ul class="pt-lg-4 pt-1fw-lighta p-0 fd ds ">
+                <li
+                  class={
+                    " text-light py-3 px-3 mt-0 h5 ps-md-3 ps-2 fw-lighta  m-0 border-bottom border-secondary "
+                  }
+                >
+                  <span className="text-purple">HI Ahmed Zulfiqar</span>
+                </li>
+                <Link class="text-start text-light py-2 px-md-2 px-2 m-0 fw-lighta hoveri  ps-md-3 ps-2  mt-2" to={'/profile'}>
+                  <i
+                    class={`fa-solid fa-user  muted pe-2`}
+                    aria-hidden="true"
+                  ></i>
+                  <span className="fw-lighta">My Profile</span>
+                </Link>
+                <li class="text-start text-light py-2 px-md-2 px-2 m-0 fw-lighta hoveri  ps-md-3 ps-2  ">
+                  <i
+                    class={`fa-solid fa-pen-to-square  muted pe-2`}
+                    aria-hidden="true"
+                  ></i>
+                  <span className="fw-lighta">Edit Profile</span>
+                </li>{" "}
+                <li class="text-start text-light py-2 px-md-2 px-2 m-0 fw-lighta hoveri  ps-md-3 ps-2  ">
+                  <i
+                    class={`fa-solid fa-right-from-bracket  muted pe-2`}
+                    aria-hidden="true"
+                  ></i>
+                  <span className="fw-lighta">Sign Out</span>
+                </li>
+              </ul>
+            </Typography>
+          </Popover>
           <div className="ms-md-3 d-md-block d-none"> Ahmed Zulfiqar</div>
         </div>
-        <div class="d-md-none d-block mt-3 w-100 bg-black py-3">
+        <div class="d-md-none d-block mt-2 w-100 bg-black py-3">
           <div className="row m-0 justify-content-between px-3">
             <Link to={"/"} className=" col-2 fa fa-home text-purple"></Link>
             <Link
