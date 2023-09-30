@@ -13,14 +13,13 @@
 :root {
   --purple: #8755f2;
   --lesspurple: #8755f246;
+  --purple: #0a66c2;
+  --lesspurple: rgba(10, 102, 194, 0.202);
   --dark: #0f0f0f;
   --lessdark: #0f0f0fe1;
   --grey: #1a1a1a;
 }
-.absolute {
-  position: absolute;
-  top: 500%;
-}
+
 ::-webkit-scrollbar {
   display: none;
   scroll-behavior: smooth !important;
@@ -325,7 +324,7 @@ body {
   }
 
   .setcardfooter {
-    height: 20vh;
+    height: 30vh;
     overflow: scroll;
   }
   .teans img {
@@ -346,20 +345,10 @@ body {
 .sad {
   transform: translateY(2px) !important;
 }
-.loader {
-  height: 100vh !important;
-  width: 100vw !important;
-  position: relative;
-  z-index: 2;
-}
+
 .a {
 }
-svg {
-  position: absolute !important;
-  top: 46% !important;
-  left: 50% !important;
-  transform: translate(-50%, -50%) !important;
-}
+
 .css-3bmhjh-MuiPaper-root-MuiPopover-paper {
   background-color: transparent !important;
 }

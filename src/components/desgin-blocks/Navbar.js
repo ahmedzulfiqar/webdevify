@@ -45,14 +45,14 @@ function Navbar({ setopen2, open2 }) {
       >
         <div class="container-fluid">
           <a
-            class="display-6 text-purple fw-bolder d-md-block d-none "
+            class="display-6 text-purple fw-bolder d-xl-block d-none "
             href="#"
           >
             <i class="fa-brands fa-slack px-2"></i>
             Webdevify
           </a>
           <a
-            class="display-6 text-purple fw-bolder  d-md-none d-block "
+            class="display-6 text-purple fw-bolder  d-xl-none d-block "
             href="#"
             onClick={() => setopen2(!open2)}
           >
@@ -106,6 +106,7 @@ function Navbar({ setopen2, open2 }) {
               vertical: "bottom",
               horizontal: "left",
             }}
+            className="bg-transparent shadow-0 border-0"
           >
             <Typography className="text-light border-0 text-start rounded-0 bg-blacks ms-5 ">
               <ul class="pt-lg-4 pt-1fw-lighta p-0 fd ds ">
@@ -147,7 +148,10 @@ function Navbar({ setopen2, open2 }) {
         </div>
         <div class="d-md-none d-block mt-2 w-100 bg-black py-3">
           <div className="row m-0 justify-content-between px-3">
-            <Link to={"/webdevify"} className=" col-2 fa fa-home text-purple"></Link>
+            <Link
+              to={"/webdevify"}
+              className=" col-2 fa fa-home text-purple"
+            ></Link>
             <Link
               to={"/friends"}
               class="fa-solid fa-user-group text-purple col-2"

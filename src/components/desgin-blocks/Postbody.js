@@ -182,9 +182,7 @@ function Postbody({ image, index }) {
                 class="bg-transparent border-0 fw-lighta w-100 text-light  "
                 placeholder="Type message"
               />
-              <a class="ms-1 text-muted" href="#!">
-                <i class="fas fa-image "></i>
-              </a>
+              
               <a class="ms-3 link-info" href="#!">
                 <i class="fas fa-paper-plane"></i>
               </a>
