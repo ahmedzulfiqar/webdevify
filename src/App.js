@@ -19,7 +19,7 @@ function App() {
   }, []);
 
   return (
-    <div className="App">
+    <div className="App" data-theme={''}>
       <Appcover>
         {complete ? (
           <div className="row  m-0">

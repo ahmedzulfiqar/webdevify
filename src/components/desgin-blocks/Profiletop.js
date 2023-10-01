@@ -3,7 +3,7 @@ import profile from "../media/me.jpg";
 function Profiletop() {
   return (
     <div className="col-12  p-0 ">
-      <div className="card bg-blacks border-0 shadow  over rounded-0 border-0">
+      <div className="card bg-blacks border-0 shadow  over rounded-1 border-0">
         <div className="card-body p-0 ">
           <img
             src="https://images.unsplash.com/photo-1682397970206-f89f28e8bbf0?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80"
@@ -19,7 +19,7 @@ function Profiletop() {
               <img
                 src={profile}
                 alt=""
-                className="img-  rounded-circle border-black  pt-0"
+                className="img-fluid  rounded-circle border-black  pt-0"
               />
             </div>
             <div className="pt-2 col-lg-5 col-12">

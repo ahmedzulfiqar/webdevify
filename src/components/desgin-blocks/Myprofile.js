@@ -9,6 +9,7 @@ function Myprofile() {
     <>
       <Profiletop />
       <Myprofilebottom />
+      <Myprofilebottom />
     </>
   );
 }

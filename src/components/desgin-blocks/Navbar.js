@@ -69,6 +69,9 @@ function Navbar({ setopen2, open2 }) {
                 ></Link>
               </li>
               <li class="nav-item mx-md-3">
+                <i class="fa fa-video text-purple "></i>
+              </li>
+              <li class="nav-item mx-md-3">
                 <Link
                   class="fa-solid fa-user-group text-purple "
                   to={"/webdevify/myfriends"}
@@ -79,9 +82,6 @@ function Navbar({ setopen2, open2 }) {
                   class="fa-solid fa-bell text-purple "
                   to={"/webdevify/notification"}
                 ></Link>
-              </li>
-              <li class="nav-item mx-md-3">
-                <i class="fa fa-envelope text-purple "></i>
               </li>
             </ul>
           </div>
@@ -108,39 +108,44 @@ function Navbar({ setopen2, open2 }) {
             }}
             className="bg-transparent shadow-0 border-0"
           >
-            <Typography className="text-light border-0 text-start rounded-0 bg-blacks ms-5 ">
-              <ul class="pt-lg-4 pt-1fw-lighta p-0 fd ds ">
+            <Typography className="text-light text-start rounded-0 bg-blacks  ">
+              <ul class="pt-lg-4 pt-1 fw-lighta p-0 fd ds ">
                 <li
                   class={
-                    " text-light py-3 px-3 mt-0 h5 ps-md-3 ps-2 fw-lighta  m-0 border-bottom border-secondary "
+                    " text-light py-2 pb-3 px-3 mt-0 h5 ps-md-3 ps-3 fw-lighta mb-3 m-0 border-bottom border-secondary border-opacity-50 "
                   }
                 >
                   <span className="text-purple">HI Ahmed Zulfiqar</span>
                 </li>
                 <Link
-                  class="text-start text-light py-2 px-md-2 px-2 m-0 fw-lighta hoveri  ps-md-3 ps-2  mt-2"
+                  class="text-start text-light py-0 px-md-2 px-2 m-0 fw-lighta hoveri  ps-md-3 ps-3 "
                   to={"/profile"}
                 >
                   <i
-                    class={`fa-solid fa-user  muted pe-2`}
+                    class={`fa-solid fa-user  muted pe-3`}
                     aria-hidden="true"
                   ></i>
                   <span className="fw-lighta">My Profile</span>
                 </Link>
-                <li class="text-start text-light py-2 px-md-2 px-2 m-0 fw-lighta hoveri  ps-md-3 ps-2  ">
+                <hr className="p-0  border-opacity-25"/>
+
+                <li class="text-start text-light py-0 px-md-2 px-2 m-0 fw-lighta hoveri  ps-md-3 ps-3  ">
                   <i
-                    class={`fa-solid fa-pen-to-square  muted pe-2`}
+                    class={`fa-solid fa-pen-to-square  muted pe-3`}
                     aria-hidden="true"
                   ></i>
                   <span className="fw-lighta">Edit Profile</span>
-                </li>{" "}
-                <li class="text-start text-light py-2 px-md-2 px-2 m-0 fw-lighta hoveri  ps-md-3 ps-2  ">
+                </li>
+                <hr className="p-0   opacity-25"/>
+
+                <li class="text-start text-light py-0 pb-3 px-md-2 px-2 m-0 fw-lighta hoveri pt-0  ps-md-3 ps-3 ">
                   <i
-                    class={`fa-solid fa-right-from-bracket  muted pe-2`}
+                    class={`fa-solid fa-right-from-bracket  muted pe-3`}
                     aria-hidden="true"
                   ></i>
                   <span className="fw-lighta">Sign Out</span>
                 </li>
+
               </ul>
             </Typography>
           </Popover>
@@ -152,6 +157,7 @@ function Navbar({ setopen2, open2 }) {
               to={"/webdevify"}
               className=" col-2 fa fa-home text-purple"
             ></Link>
+            <Link class="fa fa-video text-purple  col-2"></Link>
             <Link
               to={"/friends"}
               class="fa-solid fa-user-group text-purple col-2"
@@ -160,7 +166,6 @@ function Navbar({ setopen2, open2 }) {
               to={"/notificationmob"}
               class="fa-solid fa-bell text-purple col-2 "
             ></Link>
-            <Link class="fa fa-envelope text-purple  col-2"></Link>
           </div>
         </div>
       </nav>

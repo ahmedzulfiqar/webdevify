@@ -10,10 +10,10 @@ function Likedposts() {
       <div className="card bg-blacks shadow d-block  ">
         <div class="card-header text-light fs-3 fw-lighta py-md-2 py-0 border-bottom border-dark border-2 d-block ">
           <i
-            class="fa-solid fa-thumbs-up text-purple me-2"
+            class="fa-solid fa-fire text-purple me-2"
             aria-hidden="true"
           ></i>{" "}
-          Most Liked Posts
+          Popular Posts
         </div>
         <div className=" p-0 m-0 py-3 ">
           <div class="card-footer py-md-1   px-2   setfindfriends2">

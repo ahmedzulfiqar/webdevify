@@ -43,9 +43,9 @@ function Sidebarcomp({ open2 }) {
                 </li>
                 {i.list.map((da) => {
                   return (
-                    <li class="text-start text-light py-2 px-md-2 px-2 fw-lighta hoveri   ">
+                    <li class="text-start text-light py-2 my-1 px-md-2 px-2 hoveri border-bottom border-dark   ">
                       <i
-                        class={`${da.icon}  muted ${open2 ? "pe-5" : "pe-4"}`}
+                        class={`${da.icon}  text-secondary fd ${open2 ? "pe-5" : "pe-4"}`}
                         aria-hidden="true"
                       ></i>
                       <span className="fw-lighta   ">{da.head}</span>

@@ -19,7 +19,6 @@ function Home() {
     <Homecover>
       <Navbar setopen2={setopen2} open2={open2} />
       <Sidebarcomp open2={open2} />
-
       <Mainsection open2={open2} />
     </Homecover>
   );
