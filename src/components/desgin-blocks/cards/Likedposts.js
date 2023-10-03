@@ -1,9 +1,5 @@
 import React from "react";
-import profile from "../media/me.jpg";
-import Post from "./Post";
-import Profile from "./Profile";
-import Postbody from "./Postbody";
-import Postbodyclone from "./Postbodyclone";
+import Postbodyclone from "../post-components/Postbodyclone";
 function Likedposts() {
   return (
     <div className="col-12  p-0 mt-2 ">

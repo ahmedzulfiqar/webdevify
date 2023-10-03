@@ -1,6 +1,6 @@
 import React from "react";
-import Profile from "./Profile";
-import profile from "../media/me.jpg";
+import Profile from "../profiles/Profile";
+import profile from "../../media/me.jpg";
 function Myfriends() {
   const birthdarylist = [
     {

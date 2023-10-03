@@ -1,6 +1,5 @@
 import React from "react";
-import Profile from "./Profile";
-import Profile2 from "./Profile2";
+import Profile2 from "../desgin-blocks/profiles/Profile2";
 function Notifications() {
   return (
     <div className="col-12 p-0">

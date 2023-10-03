@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import profile from "../media/me.jpg";
+import profile from "../../media/me.jpg";
 function Commentreply() {
   return (
     <div class="d-flex comment flex-start   mb-md-3 mb-4 ps-5">

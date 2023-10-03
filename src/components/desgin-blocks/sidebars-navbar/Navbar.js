@@ -1,10 +1,10 @@
 import React, { useEffect, useState } from "react";
-import profile from "../media/me.jpg";
+import profile from "../../media/me.jpg";
 import { Link } from "react-router-dom";
 import Popover from "@mui/material/Popover";
 import Typography from "@mui/material/Typography";
 import Button from "@mui/material/Button";
-function Navbar({ setopen2, open2 }) {
+function Navbar({ setopen2, open2, settheme }) {
   const [Scrolled, setScrolled] = useState(false);
   useEffect(() => {
     const handleScroll = () => {
@@ -127,7 +127,7 @@ function Navbar({ setopen2, open2 }) {
                   ></i>
                   <span className="fw-lighta">My Profile</span>
                 </Link>
-                <hr className="p-0  border-opacity-25"/>
+                <hr className="p-0  border-opacity-25" />
 
                 <li class="text-start text-light py-0 px-md-2 px-2 m-0 fw-lighta hoveri  ps-md-3 ps-3  ">
                   <i
@@ -136,16 +136,48 @@ function Navbar({ setopen2, open2 }) {
                   ></i>
                   <span className="fw-lighta">Edit Profile</span>
                 </li>
-                <hr className="p-0   opacity-25"/>
+                <hr className="p-0   opacity-25" />
 
-                <li class="text-start text-light py-0 pb-3 px-md-2 px-2 m-0 fw-lighta hoveri pt-0  ps-md-3 ps-3 ">
+                <li class="text-start text-light py-0 px-md-2 px-2 m-0 fw-lighta hoveri pt-0  ps-md-3 ps-3 ">
                   <i
                     class={`fa-solid fa-right-from-bracket  muted pe-3`}
                     aria-hidden="true"
                   ></i>
                   <span className="fw-lighta">Sign Out</span>
                 </li>
-
+                <hr className="p-0   opacity-25" />
+                <li class="text-start text-light py-0 pb-3 px-md-2 px-2 m-0 fw-lighta hoveri pt-0  ps-md-3 ps-3">
+                  <div className="d-flex w-100 justify-content-between">
+                    <div
+                      className="btn small text-light"
+                      onClick={() => settheme("purple")}
+                      style={{ backgroundColor: "#8755f2" }}
+                    >
+                      Purple
+                    </div>
+                    <div
+                      className="btn b small text-light"
+                      onClick={() => settheme("blue")}
+                      style={{ backgroundColor: "#0a66c2" }}
+                    >
+                      Blue
+                    </div>
+                    <div
+                      onClick={() => settheme("green")}
+                      className="btn b small text-light"
+                      style={{ backgroundColor: "#00b75a" }}
+                    >
+                      Green
+                    </div>
+                    <div
+                      onClick={() => settheme("red")}
+                      className="btn b small text-light"
+                      style={{ backgroundColor: "#b22222" }}
+                    >
+                      Red
+                    </div>
+                  </div>
+                </li>
               </ul>
             </Typography>
           </Popover>

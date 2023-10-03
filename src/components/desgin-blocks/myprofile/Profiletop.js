@@ -1,8 +1,8 @@
 import React from "react";
-import profile from "../media/me.jpg";
+import profile from "../../media/me.jpg";
 function Profiletop() {
   return (
-    <div className="col-12  p-0 ">
+    <div className="col-lg-11 col-12  p-0 ">
       <div className="card bg-blacks border-0 shadow  over rounded-1 border-0">
         <div className="card-body p-0 ">
           <img

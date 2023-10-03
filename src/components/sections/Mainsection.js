@@ -1,14 +1,13 @@
 import React, { useState } from "react";
-import Createpost from "../desgin-blocks/Createpost";
-import Post from "../desgin-blocks/Post";
+import Createpost from "../desgin-blocks/cards/Createpost";
+import Post from "../desgin-blocks/post-components/Post";
 import Middlecover from "../covers/Middlecover";
-import Findfriends from "../desgin-blocks/Findfriends";
-import Likedposts from "../desgin-blocks/Likedposts";
-import Sidebarcomp from "../desgin-blocks/Sidebarcomp";
-import Myfriends from "../desgin-blocks/Myfriends";
+import Findfriends from "../desgin-blocks/cards/Findfriends";
+import Likedposts from "../desgin-blocks/cards/Likedposts";
+import Myfriends from "../desgin-blocks/cards/Myfriends";
 import { Outlet, Route, Routes } from "react-router-dom";
 import Notifications from "../desgin-blocks/Notification";
-import Myprofile from "../desgin-blocks/Myprofile";
+import Myprofile from "../desgin-blocks/myprofile/Myprofile";
 
 function Mainsection({ open }) {
   return (
@@ -74,7 +73,7 @@ function Mainsection({ open }) {
             element={
               <>
                 <Middlecover>
-                  <div className="col-xl-12 col-md-12 col-12 px-xl-5 px-md-3 px-0">
+                  <div className="col-xl-12 col-md-12 col-12 px-xl-3 px-md-3 px-0">
                     <div className="row m-0 p-0   mainsec2 ">
                       <Myprofile />
                     </div>

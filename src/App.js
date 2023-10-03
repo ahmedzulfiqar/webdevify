@@ -7,7 +7,7 @@ import { useNavigate, useNavigation } from "react-router-dom";
 import Divider from "@mui/material/Divider";
 function App() {
   const [complete, setcomplete] = useState(true);
-
+  const [theme, settheme] = useState("blue");
   const navigation = useNavigate();
   useEffect(() => {
     setTimeout(() => {
@@ -19,7 +19,7 @@ function App() {
   }, []);
 
   return (
-    <div className="App" data-theme={''}>
+    <div className="App" data-theme={theme}>
       <Appcover>
         {complete ? (
           <div className="row  m-0">
@@ -159,7 +159,7 @@ function App() {
             </div>
           </div>
         ) : (
-          <Home />
+          <Home settheme={settheme} />
         )}
       </Appcover>
     </div>

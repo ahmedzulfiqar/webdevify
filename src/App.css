@@ -11,21 +11,41 @@
   box-shadow: none !important;
 }
 :root {
-  --purple: #8755f2;
-  --lesspurple: #8755f246;
   --purple: #0a66c2;
   --lesspurple: rgba(10, 102, 194, 0.202);
   --dark: #0f0f0f;
   --lessdark: #0f0f0fe1;
   --grey: #1a1a1a;
 }
-[data-theme="dark"] {
+[data-theme="purple"] {
   --purple: #8755f2;
   --lesspurple: #8755f246;
   --dark: #0f0f0f;
   --lessdark: #0f0f0fe1;
   --grey: #1a1a1a;
 }
+[data-theme="blue"] {
+  --purple: #0a66c2;
+  --lesspurple: rgba(10, 102, 194, 0.202);
+  --dark: #0f0f0f;
+  --lessdark: #0f0f0fe1;
+  --grey: #1a1a1a;
+}
+[data-theme="green"] {
+  --purple: #00b75a;
+  --lesspurple: #00b75c47;
+  --dark: #0f0f0f;
+  --lessdark: #0f0f0fe1;
+  --grey: #1a1a1a;
+}
+[data-theme="red"] {
+  --purple: #b22222;
+  --lesspurple: #b2222235;
+  --dark: #0f0f0f;
+  --lessdark: #0f0f0fe1;
+  --grey: #1a1a1a;
+}
+
 ::-webkit-scrollbar {
   display: none;
   scroll-behavior: smooth !important;
@@ -380,4 +400,7 @@ body {
 }
 .d-flex:hover .fa-link {
   color: var(--purple) !important;
+}
+.img-fluid{
+  cursor: pointer;
 }

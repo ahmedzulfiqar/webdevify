@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import profile from "../media/me.jpg";
+import profile from "../../media/me.jpg";
 import Commentreply from "./Commentreply";
 function Comment() {
   const [showreply, setshowreply] = useState(false);

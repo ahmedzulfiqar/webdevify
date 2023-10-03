@@ -1,10 +1,6 @@
 import React, { useState } from "react";
-import profile from "../media/me.jpg";
+import profile from "../../media/me.jpg";
 import Comment from "./Comment";
-import Commentreply from "./Commentreply";
-import Popover from "@mui/material/Popover";
-import Typography from "@mui/material/Typography";
-import Button from "@mui/material/Button";
 
 function Postbody({ image, index }) {
   const [more, setmore] = useState(true);

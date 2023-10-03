@@ -1,6 +1,5 @@
 import React, { useState } from "react";
-import profile from "../media/me.jpg";
-import Comment from "./Comment";
+import profile from "../../media/me.jpg";
 function Postbodyclone({ image }) {
   const [more, setmore] = useState(true);
   const [like, setlike] = useState(false);

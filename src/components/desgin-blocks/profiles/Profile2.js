@@ -1,5 +1,5 @@
 import React from "react";
-import profile from "../media/me.jpg";
+import profile from "../../media/me.jpg";
 function Profile2() {
   return (
     <div className="d-block pb-3 pt-3 border-bottom border-secondary">

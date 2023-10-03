@@ -1,7 +1,6 @@
 import React, { useState } from "react";
-import profile from "../media/me.jpg";
+import profile from "../../media/me.jpg";
 import Comment from "./Comment";
-import Commentreply from "./Commentreply";
 function Textpostbody() {
   const [more, setmore] = useState(true);
   const [like, setlike] = useState(false);

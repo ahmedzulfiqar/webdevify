@@ -1,7 +1,6 @@
 import React from "react";
-import profile from "../media/me.jpg";
-import Post from "./Post";
-import Birthdayprofile from "./Birthdayprofile";
+import profile from "../../media/me.jpg";
+import Birthdayprofile from "../profiles/Birthdayprofile";
 
 function Findfriends() {
   const birthdarylist = [

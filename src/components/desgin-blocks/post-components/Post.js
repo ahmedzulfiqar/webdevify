@@ -1,5 +1,5 @@
 import React from "react";
-import profile from "../media/me.jpg";
+import profile from "../../media/me.jpg";
 import Postbody from "./Postbody";
 import Textpostbody from "./Textpostbody";
 function Post() {

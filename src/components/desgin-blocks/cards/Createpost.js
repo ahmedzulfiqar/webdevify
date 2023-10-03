@@ -1,5 +1,5 @@
 import React from "react";
-import profile from "../media/me.jpg";
+import profile from "../../media/me.jpg";
 function Createpost() {
   return (
     <div className="col-12  p-0 ">
