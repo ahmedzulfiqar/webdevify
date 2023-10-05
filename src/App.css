@@ -285,14 +285,15 @@ body {
   font-size: 0.8rem;
 }
 .imgwidth {
-  height: auto !important;
+  height: min-content !important;
   overflow: hidden !important;
-  max-height: 50vh !important;
+  max-height: max-content !important;
+  width: 100% !important;
 }
 .imgwidth img {
   width: 100% !important;
-  height: auto !important;
 }
+
 .rotate {
   transform: rotateZ(180deg) rotateY(180deg) translateY(2px);
   cursor: pointer;
@@ -354,9 +355,16 @@ body {
   border: var(--dark) 5px solid;
   width: 200px !important;
 }
+.teans2 img {
+  border: var(--dark) 5px solid;
+  width: 180px !important;
+}
 .over {
   height: 25vh !important;
   overflow: hidden;
+}
+.teans3 img {
+  width: 120px !important;
 }
 @media screen and (max-width: 600px) {
   .imgwidth {
@@ -377,6 +385,19 @@ body {
     transform: translateX(3vw);
     border: var(--dark) 5px solid;
     width: 40vw !important;
+  }
+  .teans img {
+    border: var(--dark) 5px solid;
+    width: 40vw !important;
+  }
+  .teans2 img {
+    border: var(--dark) 5px solid;
+    width: 30vw !important;
+    height: auto !important;
+  }
+  .teans3 img {
+    width: 30vw !important;
+    height: auto !important;
   }
 }
 .rotate {
@@ -401,6 +422,6 @@ body {
 .d-flex:hover .fa-link {
   color: var(--purple) !important;
 }
-.img-fluid{
+.img-fluid {
   cursor: pointer;
 }

@@ -8,6 +8,7 @@ import Myfriends from "../desgin-blocks/cards/Myfriends";
 import { Outlet, Route, Routes } from "react-router-dom";
 import Notifications from "../desgin-blocks/Notification";
 import Myprofile from "../desgin-blocks/myprofile/Myprofile";
+import Friendprofile from "../desgin-blocks/friend-profile/Friendprofile";
 
 function Mainsection({ open }) {
   return (
@@ -69,13 +70,33 @@ function Mainsection({ open }) {
         {
           //myprofile
           <Route
-            path="/profile"
+            path="/webdevify/profile"
             element={
               <>
                 <Middlecover>
                   <div className="col-xl-12 col-md-12 col-12 px-xl-3 px-md-3 px-0">
                     <div className="row m-0 p-0   mainsec2 ">
                       <Myprofile />
+                    </div>
+                  </div>
+                </Middlecover>
+                <div className="col-md-2 col-12 h-100 d-xl-block d-none p-0">
+                  <Myfriends />
+                </div>
+              </>
+            }
+          ></Route>
+        }
+        {
+          //frinds profile
+          <Route
+            path="/webdevify/friendsprofile"
+            element={
+              <>
+                <Middlecover>
+                  <div className="col-xl-12 col-md-12 col-12 px-xl-3 px-md-3 px-0">
+                    <div className="row m-0 p-0   mainsec2 ">
+                      <Friendprofile />
                     </div>
                   </div>
                 </Middlecover>

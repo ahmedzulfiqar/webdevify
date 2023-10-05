@@ -119,7 +119,7 @@ function Navbar({ setopen2, open2, settheme }) {
                 </li>
                 <Link
                   class="text-start text-light py-0 px-md-2 px-2 m-0 fw-lighta hoveri  ps-md-3 ps-3 "
-                  to={"/profile"}
+                  to={"/webdevify/profile"}
                 >
                   <i
                     class={`fa-solid fa-user  muted pe-3`}

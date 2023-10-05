@@ -1,14 +1,31 @@
 import React, { useState } from "react";
+import { Link } from "react-router-dom";
 
 function Sidebarcomp({ open2 }) {
   const sampledata = [
     {
       head: "SOCIAL",
       list: [
-        { head: "News Feed", icon: "fa-solid fa-newspaper" },
-        { head: "Profile", icon: "fa-solid fa-user" },
-        { head: "Friends", icon: "fa-solid fa-user-group" },
-        { head: "Notifcation", icon: "fa-solid fa-bell" },
+        {
+          head: "News Feed",
+          icon: "fa-solid fa-newspaper",
+          link: "/webdevify",
+        },
+        {
+          head: "My Profile",
+          icon: "fa-solid fa-user",
+          link: "/webdevify/profile",
+        },
+        {
+          head: "My Friends",
+          icon: "fa-solid fa-user-group",
+          link: "/webdevify/friendsprofile",
+        },
+        {
+          head: "Notifcation",
+          icon: "fa-solid fa-bell",
+          link: "/webdevify/notification",
+        },
         { head: "Videos", icon: "fa-solid fa-video" },
         { head: "Pictures", icon: "fa-solid fa-image" },
         { head: "Liked Posts", icon: "fa-solid fa-thumbs-up" },
@@ -43,13 +60,18 @@ function Sidebarcomp({ open2 }) {
                 </li>
                 {i.list.map((da) => {
                   return (
-                    <li class="text-start text-light py-2 my-1 px-md-2 px-2 hoveri border-bottom border-dark   ">
+                    <Link
+                      class="nav-link text-start text-light py-2 my-1 px-md-2 px-2 hoveri border-bottom border-dark   "
+                      to={da.link}
+                    >
                       <i
-                        class={`${da.icon}  text-secondary fd ${open2 ? "pe-5" : "pe-4"}`}
+                        class={`${da.icon}  text-secondary fd ${
+                          open2 ? "pe-5" : "pe-4"
+                        }`}
                         aria-hidden="true"
                       ></i>
                       <span className="fw-lighta   ">{da.head}</span>
-                    </li>
+                    </Link>
                   );
                 })}
               </>

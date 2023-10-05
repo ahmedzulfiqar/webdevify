@@ -2,7 +2,7 @@ import React from "react";
 import profile from "../../media/me.jpg";
 function Createpost() {
   return (
-    <div className="col-12  p-0 ">
+    <div className="col-12  p-0 mb-3 ">
       <div className="card bg-blacks border-0 shadow d-sm-block d-none">
         <div class="card-header text-light fs-3 fw-lighta py-md-2 py-2 border-bottom border-dark border-2 d-sm-block d-none">
           Create Post
@@ -21,9 +21,8 @@ function Createpost() {
               placeholder="Write Something"
             />
           </div>
-          <div className="btn bg-purpleless text-purple mt-0 d-grid pt-md-2 pb-1 ">
+          <div className="btn bg-purpleless text-purple mt-0  ">
             POST
-            
           </div>
         </div>
         <div class="card-footer py-md-3 py-2 border-top border-dark border-2 px-1">

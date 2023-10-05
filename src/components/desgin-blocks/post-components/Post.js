@@ -24,6 +24,11 @@ function Post() {
           "https://images.unsplash.com/photo-1516444830679-7f62c77fae81?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1984&q=80"
         }
         index={4}
+      /> <Postbody
+        image={
+          "https://tse1.mm.bing.net/th/id/OIP.BmChjBUSITLbvwcQrjR71AHaLH?pid=ImgDet&rs=1"
+        }
+        index={5}
       />
     </div>
   );

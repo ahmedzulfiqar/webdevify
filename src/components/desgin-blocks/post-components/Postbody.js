@@ -9,7 +9,7 @@ function Postbody({ image, index }) {
 
   return (
     <div class="card bg-blacks mb-3">
-      <div class="card-body fontcahnge px-md-3 px-2 pt-md-3 pt-3 pb-0">
+      <div class="card-body fontcahnge px-md-3 px-2 pt-md-3 pt-3 pb-0 justify-content-center">
         <div class="d-flex flex-start align-items-center mx-auto">
           <img
             class="rounded-1 mynavbarimg shadow-1-strong me-3 "
@@ -104,11 +104,11 @@ function Postbody({ image, index }) {
         >
           {more ? "show More" : "show Less"}
         </b>
-        <div className="card-images mt-md-3 mt-3  text-center imgwidth">
+        <div className="card-images mt-md-3 mt-3  text-center imgwidth mx-auto">
           <img
             src={image}
             alt=""
-            className=" img-fluid rounded-1"
+            className=" img-fluid rounded-1 ms-auto shadow"
             type="button"
             data-bs-toggle="modal"
             data-bs-target={`#exampleModal${index}`}
@@ -178,7 +178,7 @@ function Postbody({ image, index }) {
                 class="bg-transparent border-0 fw-lighta w-100 text-light  "
                 placeholder="Type message"
               />
-              
+
               <a class="ms-3 link-info" href="#!">
                 <i class="fas fa-paper-plane"></i>
               </a>
