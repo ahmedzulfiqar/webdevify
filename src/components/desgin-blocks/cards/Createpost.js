@@ -61,7 +61,7 @@ function Createpost() {
               placeholder="Write Something"
             />
           </div>
-          <div className="btn bg-purpleless text-purple mt-0 pt-1 pb-1 px-2  ">
+          <div className="btn bg-purpleless text-purple mt-0   ">
             Post
           </div>
         </div>

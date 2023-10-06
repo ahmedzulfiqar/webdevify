@@ -287,11 +287,11 @@ body {
 .imgwidth {
   height: min-content !important;
   overflow: hidden !important;
-  max-height: max-content !important;
+  max-height: 60vh !important;
   width: 100% !important;
 }
 .imgwidth img {
-  width: 100% !important;
+  max-height: 100% !important;
 }
 
 .rotate {
@@ -424,4 +424,12 @@ body {
 }
 .img-fluid {
   cursor: pointer;
+}
+.gradient-custom-2 {
+  /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(to right, #0a66c2, #0a66c2, #8755f2, #8755f2);
+}
+
+.hiegth {
+  aspect-ratio: 4/ 1;
 }

@@ -7,9 +7,9 @@ function Friendslistcard() {
       <div className="card bg-blacks border-0 shadow   rounded-4 border-0">
         <div className="card-body p-0 ">
           <img
-            src="https://templates.iqonic.design/socialv/bs5/html/dist/assets/images/page-img/profile-bg2.jpg"
+            src="https://images.unsplash.com/photo-1468657988500-aca2be09f4c6?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80"
             alt=""
-            className="img-fluid "
+            className="img-fluid hiegth"
           />
         </div>
       </div>
