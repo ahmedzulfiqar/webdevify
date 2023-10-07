@@ -110,6 +110,7 @@ function Postbody({ image, index }) {
             alt=""
             className=" img-fluid rounded-1 ms-auto shadow"
             type="button"
+            loading="lazy"
             data-bs-toggle="modal"
             data-bs-target={`#exampleModal${index}`}
           />
