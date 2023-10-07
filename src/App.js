@@ -4,6 +4,7 @@ import Appcover from "./components/covers/Appcover";
 import Home from "./pages/Home";
 import { useEffect, useState } from "react";
 import {
+  Link,
   Route,
   Routes,
   useLocation,
@@ -29,6 +30,8 @@ function App() {
         <Route path="/webdevify/login" element={<Login />} />
         <Route path="/webdevify/signup" element={<Signup />} />
       </Routes>
+      <Link to={'/webdevify/login'}>aa</Link>
+
       {location.pathname !== "/webdevify/login" &&
         location.pathname !== "/webdevify/signup" && (
           <Appcover>
