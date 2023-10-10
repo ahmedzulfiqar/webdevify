@@ -138,13 +138,16 @@ function Navbar({ setopen2, open2, settheme }) {
                 </li>
                 <hr className="p-0   opacity-25" />
 
-                <li class="text-start text-light py-0 px-md-2 px-2 m-0 fw-lighta hoveri pt-0  ps-md-3 ps-3 ">
+                <Link
+                  class="text-start text-light py-0 px-md-2 px-2 m-0 fw-lighta hoveri pt-0  ps-md-3 ps-3 "
+                  to={"/webdevify/login"}
+                >
                   <i
                     class={`fa-solid fa-right-from-bracket  muted pe-3`}
                     aria-hidden="true"
                   ></i>
                   <span className="fw-lighta">Sign Out</span>
-                </li>
+                </Link>
                 <hr className="p-0   opacity-25" />
                 <li class="text-start text-light py-0 pb-3 px-md-2 px-2 m-0 fw-lighta hoveri pt-0  ps-md-3 ps-3">
                   <div className="d-flex w-100 justify-content-between">

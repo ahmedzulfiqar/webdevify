@@ -16,21 +16,19 @@ import Signup from "./pages/Signup";
 function App() {
   const [complete, setcomplete] = useState(true);
   const [theme, settheme] = useState("blue");
-  const navigation = useNavigate();
   useEffect(() => {
     setTimeout(() => {
       setcomplete(!true);
     }, 5000);
   }, []);
   const location = useLocation();
-
+  const navigation = useNavigate();
   return (
     <div className="App" data-theme={theme}>
       <Routes>
         <Route path="/webdevify/login" element={<Login />} />
         <Route path="/webdevify/signup" element={<Signup />} />
       </Routes>
-      <Link to={'/webdevify/login'}>aa</Link>
 
       {location.pathname !== "/webdevify/login" &&
         location.pathname !== "/webdevify/signup" && (

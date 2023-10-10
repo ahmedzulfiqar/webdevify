@@ -42,15 +42,15 @@
 
 @keyframes spinDashArray {
   0% {
-    stroke-dasharray: 270 90;
-  }
-
-  50% {
     stroke-dasharray: 0 360;
   }
 
+  50% {
+    stroke-dasharray: 200 360;
+  }
+
   100% {
-    stroke-dasharray: 270 90;
+    stroke-dasharray: 0 360;
   }
 }
 

@@ -346,7 +346,7 @@ body {
 }
 .cover {
   width: 100% !important;
-  height: 50vh;
+  height: 40vh;
 }
 
 .teans img {
@@ -360,7 +360,7 @@ body {
   width: 180px !important;
 }
 .over {
-  height: 25vh !important;
+  height: 20vh !important;
   overflow: hidden;
 }
 .teans3 img {
