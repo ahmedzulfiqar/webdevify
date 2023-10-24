@@ -1,11 +1,15 @@
-import React, { useEffect, useState } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import profile from "../../media/me.jpg";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import Popover from "@mui/material/Popover";
 import Typography from "@mui/material/Typography";
 import Button from "@mui/material/Button";
+import { AuthContexter } from "../../../context/Authcontext";
 function Navbar({ setopen2, open2, settheme }) {
   const [Scrolled, setScrolled] = useState(false);
+  const { userData, setrender , render } = useContext(AuthContexter);
+  const [data, setdata] = useState();
+  const [anchorEl, setAnchorEl] = React.useState(null);
   useEffect(() => {
     const handleScroll = () => {
       const scrollTop = window.scrollY;
@@ -23,8 +27,13 @@ function Navbar({ setopen2, open2, settheme }) {
       window.removeEventListener("scroll", handleScroll);
     };
   }, []);
-  const [anchorEl, setAnchorEl] = React.useState(null);
-
+  useEffect(() => {
+    const fetcher = async () => {
+      const datas = (await userData) && userData;
+      setdata(datas);
+    };
+    fetcher();
+  }, []);
   const handleClick = (event) => {
     setAnchorEl(event.currentTarget);
   };
@@ -32,10 +41,12 @@ function Navbar({ setopen2, open2, settheme }) {
   const handleClose = () => {
     setAnchorEl(null);
   };
-
+  const signout = () => {
+    localStorage.removeItem("jwtToken");
+    setrender(true);
+  };
   const open = Boolean(anchorEl);
   const id = open ? "simple-popover" : undefined;
-
   return (
     <div className="col-12 p-0 m-0">
       <nav
@@ -47,6 +58,7 @@ function Navbar({ setopen2, open2, settheme }) {
           <a
             class="display-6 text-purple fw-bolder d-xl-block d-none "
             href="#"
+            onClick={() => setopen2(!open2)}
           >
             <i class="fa-brands fa-slack px-2"></i>
             Webdevify
@@ -92,7 +104,7 @@ function Navbar({ setopen2, open2, settheme }) {
             onClick={handleClick}
           >
             <img
-              src={profile}
+              src={userData && userData.picturePath}
               alt=""
               className="img-fluid rounded-circle mynavbarimg pt-0"
             />
@@ -140,7 +152,7 @@ function Navbar({ setopen2, open2, settheme }) {
 
                 <Link
                   class="text-start text-light py-0 px-md-2 px-2 m-0 fw-lighta hoveri pt-0  ps-md-3 ps-3 "
-                  to={"/webdevify/login"}
+                  onClick={signout}
                 >
                   <i
                     class={`fa-solid fa-right-from-bracket  muted pe-3`}
@@ -184,7 +196,9 @@ function Navbar({ setopen2, open2, settheme }) {
               </ul>
             </Typography>
           </Popover>
-          <div className="ms-md-3 d-md-block d-none"> Ahmed Zulfiqar</div>
+          <div className="ms-md-2 d-md-block d-none text-uppercase">
+            {data && data.name}
+          </div>
         </div>
         <div class="d-md-none d-block mt-2 w-100 bg-black py-3">
           <div className="row m-0 justify-content-between px-3">

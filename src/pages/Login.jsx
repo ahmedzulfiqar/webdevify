@@ -1,7 +1,10 @@
-import React, { useState } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import Authcover from "../components/covers/Authcover";
 import { Link, useNavigate } from "react-router-dom";
+import { AuthContexter } from "../context/Authcontext";
 function Login() {
+  const { userData, setrender, render } = useContext(AuthContexter);
+
   const navigation = useNavigate();
   const [error, seterror] = useState();
   const [loader, setloader] = useState(false);
@@ -40,8 +43,8 @@ function Login() {
             localStorage.setItem("jwtToken", data.token);
             seterror("Authentication Successful");
             setTimeout(() => {
-              navigation("/webdevify/");
-            },2000);
+              window.location.reload();
+            }, 2000);
           } else {
             const responseData = await response.json();
             seterror(responseData.message);
@@ -56,6 +59,14 @@ function Login() {
       seterror("All Fileds Must Containe More Than  Characters");
     }
   };
+  useEffect(() => {
+    const storedToken = localStorage.getItem("jwtToken");
+    if (storedToken) {
+      navigation("/webdevify");
+    } else {
+    }
+  }, []);
+
   return (
     <Authcover>
       <div class="col-lg-6 order-lg-1 order-2">

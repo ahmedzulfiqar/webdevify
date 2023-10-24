@@ -2,16 +2,21 @@ import React, { useState } from "react";
 import Authcover from "../components/covers/Authcover";
 import { TextField, ThemeProvider, createTheme } from "@mui/material";
 import { Link, useNavigate } from "react-router-dom";
+import { getDownloadURL, ref, uploadBytesResumable } from "firebase/storage";
+import { storage } from "../firebase";
 
 function Signup() {
   const navigation = useNavigate();
   const [error, seterror] = useState();
   const [loader, setloader] = useState(false);
+  const [file, setfile] = useState("");
+  const [prewimg, setprewimg] = useState(null);
   const [inputdata, setinputdata] = useState({
     name: "",
     email: "",
     password: "",
     confirmpassword: "",
+    profilePicture: "",
   });
   const handelchange = (e) => {
     setinputdata({
@@ -34,6 +39,7 @@ function Signup() {
       if (inputdata.password !== inputdata.confirmpassword) {
         seterror("Password Should Be Same");
       } else {
+        setinputdata(inputdata)
         if (checker.test(inputdata.email)) {
           try {
             const response = await fetch("http://localhost:8000/user/signup", {
@@ -43,12 +49,13 @@ function Signup() {
               },
               body: JSON.stringify(inputdata),
             });
+
             console.log(response);
             if (response.ok) {
               console.log(response);
               setTimeout(() => {
                 navigation("/webdevify/login");
-              },2000);
+              }, 2000);
               seterror("Authentication Successful");
             } else {
               const responseData = await response.json();
@@ -65,51 +72,30 @@ function Signup() {
       seterror("All Fileds Must Containe More Than  Characters");
     }
   };
+  const handelimagechange = async (e) => {
+    setprewimg(URL.createObjectURL(e.target.files[0]));
+    setfile(e.target.files[0]);
+    const storageRef = ref(storage, `${e.target.files[0].name}`);
 
-  const theme = createTheme({
-    components: {
-      MuiInput: {
-        styleOverrides: {
-          underline: {
-            "&:before": {
-              borderBottomColor: "#0a66c2",
-            },
+    await uploadBytesResumable(storageRef, e.target.files[0]).then(async () => {
+      const hj = await getDownloadURL(storageRef);
+      setinputdata({
+        ...inputdata,
+        picturePath: hj,
+      });
+    });
+    console.log(inputdata)
 
-            "&:after": {
-              borderBottomColor: "#0a66c2",
-            },
-            "&:hover:before": {
-              borderBottomColor: "#0a66c2", // Border color on hover
-            },
-          },
-        },
-      },
-      MuiInputLabel: {
-        styleOverrides: {
-          root: {
-            color: "#fff",
-            "&.Mui-focused": {
-              color: "#fff",
-            },
-          },
-        },
-      },
-      MuiInputBase: {
-        styleOverrides: {
-          input: {
-            color: "#fff", // Change input text color
-          },
-        },
-      },
-    },
-  });
+   
+  };
+
   return (
     <Authcover>
-      <div class="col-lg-6 order-lg-1 order-2 ">
+      <div class="col-lg-6 order-lg-1 order-2 px-0">
         <div class="card-body p-md-5 mx-md-4">
           <div class="text-center">
             <h4 class="mt-1 pb-1 display-5 text-purple">WEBDEVIFY</h4>
-            <h6 class="mt-1 mb-4 pb-1 display-6 fw-lighta text-light">
+            <h6 class="mt-1 mb-md-4 mb-4 pb-1 display-6 fw-lighta text-light">
               Create Your Account
             </h6>
           </div>
@@ -117,52 +103,40 @@ function Signup() {
           {!loader ? (
             <form>
               <div class=" mb-3">
-                <ThemeProvider theme={theme}>
-                  <TextField
-                    label="Name"
-                    className="w-100  fw-lighta"
-                    type="name"
-                    onChange={handelchange}
-                    variant="standard"
-                    name="name"
-                  />
-                </ThemeProvider>
+                <input
+                  placeholder="Name"
+                  className="w-100 rounded-1 m-0 b text-light py-2 fw-lighta px-3 bg-transparent border-purple"
+                  type="name"
+                  onChange={handelchange}
+                  name="name"
+                />
               </div>
               <div class=" mb-3">
-                <ThemeProvider theme={theme}>
-                  <TextField
-                    label="Email"
-                    className="w-100 "
-                    onChange={handelchange}
-                    type="email"
-                    name="email"
-                    variant="standard"
-                  />
-                </ThemeProvider>
+                <input
+                  placeholder="Email"
+                  className="w-100 rounded-1 m-0 b text-light py-2 fw-lighta px-3 bg-transparent border-purple"
+                  onChange={handelchange}
+                  type="email"
+                  name="email"
+                />
               </div>
               <div class=" mb-3">
-                <ThemeProvider theme={theme}>
-                  <TextField
-                    onChange={handelchange}
-                    label="Password"
-                    className="w-100 "
-                    name="password"
-                    type="password"
-                    variant="standard"
-                  />
-                </ThemeProvider>
+                <input
+                  onChange={handelchange}
+                  placeholder="Password"
+                  className="w-100 rounded-1 m-0 b text-light py-2 fw-lighta px-3 bg-transparent border-purple"
+                  name="password"
+                  type="password"
+                />
               </div>
               <div class=" mb-4">
-                <ThemeProvider theme={theme}>
-                  <TextField
-                    label="Confirm Password"
-                    onChange={handelchange}
-                    className="w-100 "
-                    type="password"
-                    name="confirmpassword"
-                    variant="standard"
-                  />
-                </ThemeProvider>
+                <input
+                  placeholder="Confirm Password"
+                  onChange={handelchange}
+                  className="w-100 rounded-1 m-0 b text-light py-2 fw-lighta px-3 bg-transparent border-purple"
+                  type="password"
+                  name="confirmpassword"
+                />
                 {error && (
                   <div
                     className={`fs-6 fw-lighta ${
@@ -183,14 +157,40 @@ function Signup() {
                   </div>
                 )}
               </div>
-
-              <div class="text-center mb-4 mt-1 d-flex">
+              <div className="mb-4 d-flex">
+                {prewimg && (
+                  <img
+                    src={
+                      !prewimg
+                        ? "https://marketplace.canva.com/lacwk/MAEkYOlacwk/1/tl/canva-black-avatar-MAEkYOlacwk.png"
+                        : prewimg
+                    }
+                    className="mynavbarimg mx-2 rounded-circle"
+                    alt=""
+                  />
+                )}
+                <label
+                  class="form-label text-white border-purple p-2 align-self-center rounded-2 fw-lighta"
+                  for="customFile2"
+                  accept="image/*"
+                >
+                  Upload Image
+                </label>
+                <input
+                  type="file"
+                  class=" d-none"
+                  name="profilePicture"
+                  id="customFile2"
+                  onChange={(e) => handelimagechange(e)}
+                />
+              </div>
+              <div class="text-center mb-md-4 mb-2 mt-1 d-flex">
                 <button
                   class="btn btn-primary d-grid w-100 align-self-center  gradient-custom-2 border-0 rounded-3 shadow mb-3"
                   type="button"
                   onClick={submitform}
                 >
-                  Sign Up
+                  Submit
                 </button>{" "}
               </div>
 

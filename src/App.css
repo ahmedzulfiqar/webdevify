@@ -4,6 +4,7 @@
   text-decoration: none !important;
   list-style: none !important;
   font-family: "M PLUS Rounded 1c", sans-serif;
+  transition: all 0.5s ease;
 }
 *:focus {
   border: none !important;
@@ -144,7 +145,7 @@ body {
 }
 .mynavbarimg {
   width: 2.7rem !important;
-  height: 100% !important;
+  height: 45px !important;
 }
 .mynavbar i {
   transition: 0.2s ease;
@@ -432,4 +433,16 @@ body {
 
 .hiegth {
   aspect-ratio: 4/ 1;
+}
+.seting {
+  width: 100% !important;
+  max-height: 30vh;
+}
+.btn,
+.btn:hover,
+.btn:active,
+.btn:focus {
+  outline: none !important;
+  border: none !important;
+  box-shadow: 0 !important;
 }
