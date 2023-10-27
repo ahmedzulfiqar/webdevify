@@ -7,12 +7,12 @@ export const Authcontext = ({ children }) => {
   const [userData, setUserData] = useState(null);
   const [render, setrender] = useState(false);
   const navigation = useNavigate();
-
+  const api_base = "https://webdevify-backend.onrender.com";
   useEffect(() => {
     const storedToken = localStorage.getItem("jwtToken");
     if (storedToken) {
       setToken(storedToken);
-      fetch("http://localhost:8000/user/authenticate", {
+      fetch(`${api_base}/user/authenticate`, {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
@@ -32,9 +32,8 @@ export const Authcontext = ({ children }) => {
     }
   }, [render]);
 
-
   return (
-    <AuthContexter.Provider value={{ userData, setrender, render }}>
+    <AuthContexter.Provider value={{ userData, setrender, render, api_base }}>
       {children}
     </AuthContexter.Provider>
   );

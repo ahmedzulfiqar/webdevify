@@ -5,7 +5,7 @@ import { storage } from "../../../firebase";
 import Loader from "../Loader";
 import { InfinitySpin } from "react-loader-spinner";
 function Createpost() {
-  const { userData, setrender, render } = useContext(AuthContexter);
+  const { userData, setrender, render, api_base } = useContext(AuthContexter);
   const [file, setfile] = useState("");
   const [prewimg, setprewimg] = useState("");
   const [loading, setloading] = useState(false);
@@ -22,7 +22,7 @@ function Createpost() {
   };
   const handleSubmit = async (e) => {
     try {
-      const response = await fetch("http://localhost:8000/user/newpost", {
+      const response = await fetch(`${api_base}/user/newpost`, {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
@@ -68,16 +68,16 @@ function Createpost() {
   return (
     <div className="col-12  p-0 mb-3 ">
       <div className="card bg-blacks border-0 shadow d-sm-block d-none">
-        <div className="card-header text-light fs-3 fw-lighta py-md-2 py-2 border-bottom border-dark border-2 d-sm-block d-none">
+        <div className="card-header text-light fs-3 fw-lighta py-md-2 py-2 border-0 d-sm-block d-none">
           Create Post
         </div>
-
+        <hr className="m-0 pb-1 opacity-50" />
         <div className="card-body d-flex d-block py-md-2 py-2">
           <div className="d-flex w-100">
             <img
               src={userData.picturePath}
               alt=""
-              className="img-fluid rounded-circle mynavbarimg pt-0"
+              className="img-fluid rounded-circle  mynavbarimg pt-0"
             />
             <input
               type="text"
@@ -89,7 +89,7 @@ function Createpost() {
             />
           </div>
           <div
-            className={`btn bg-purpleless text-purple mt-0 ${
+            className={`btn bg-purpleless btn-sm small h-100 text-purple mt-0 small fw-lighta  align-self-center py-2 px-3 ${
               loading ? "disabled" : ""
             }`}
             onClick={handleSubmit}
@@ -97,7 +97,9 @@ function Createpost() {
             POST
           </div>
         </div>
-        <div className="card-footer py-md-3 py-2 border-top border-dark border-2 px-1">
+        <hr className="m-0 mt-1 p-0 opacity-50" />
+
+        <div className="card-footer py-md-3 pt-0 py-2 border-0 px-1 m-0">
           {!loading ? (
             <>
               {prewimg && (
@@ -118,7 +120,7 @@ function Createpost() {
             </div>
           )}
           <div className="d-flex p-0">
-            <div className="px-1">
+            <div className="px-3">
               <input
                 type="file"
                 className=" d-none"
@@ -128,20 +130,14 @@ function Createpost() {
                 onChange={(e) => handelimagechange(e)}
               />
               <label
-                className={`btn bg-purpleless text-purple fw-lighta fw-bolder m-0 px-md-1 px-0 pe-1 ${
+                className={`btn btn-sm  py-2 px-3 bg-purpleless text-purple fw-lighta rounded-1 ${
                   loading ? "disabled" : ""
                 }  `}
                 htmlFor="customFile2"
               >
-                <i className="fa-solid fa-image  text-success pe-md-2 pe-1 ps-1"></i>
+                <i class="fa fa-file pe-2" aria-hidden="true"></i>
                 Add Photo
               </label>
-            </div>
-            <div className="px-1 mt-sm-0">
-              <div className="btn bg-purpleless text-purple fw-lighta fw-bolder m-0 px-md-1 px-0 pe-1">
-                <i className="fa-solid fa-face-smile  text-warning pe-md-2 pe-1 ps-1"></i>
-                Feeling
-              </div>
             </div>
           </div>
         </div>
@@ -168,7 +164,9 @@ function Createpost() {
               placeholder="Write Something"
             />
           </div>
-          <div className="btn bg-purpleless text-purple  fw-bolder m-0 py-1 px-2 fw-lighta small btn-sm">Post</div>
+          <div className="btn bg-purpleless text-purple  fw-bolder m-0 py-1 px-2 fw-lighta small btn-sm">
+            Post
+          </div>
         </div>
         <div className="card-footer py-md-3 py-2 border- border-dark border-2 px-1">
           <div className="d-flex p-0">
@@ -182,16 +180,14 @@ function Createpost() {
                 onChange={(e) => handelimagechange(e)}
               />
               <label
-                className={`btn bg-purpleless text-purple  fw-bolder m-0 py-1 px-2 fw-lighta small btn-sm ${
+                className={`btn bg-purpleless text-purple  fw-lighta m-0 py-1 px-2 fw-lighta small btn-sm ${
                   loading ? "disabled" : ""
                 }`}
                 htmlFor="customFile2"
               >
                 Add Photo
               </label>
-            
             </div>
-         
           </div>
         </div>
       </div>

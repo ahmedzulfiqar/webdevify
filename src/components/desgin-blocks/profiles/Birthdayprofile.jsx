@@ -2,13 +2,13 @@ import React, { useContext, useState } from "react";
 import { AuthContexter } from "../../../context/Authcontext";
 
 function Birthdayprofile({ data }) {
-  const { userData, setrender } = useContext(AuthContexter);
+  const { userData, setrender, render,api_base } = useContext(AuthContexter);
   const sendrequest = async () => {
     try {
       const from = userData && userData.email;
       const to = data.email;
 
-      const response = await fetch("http://localhost:8000/sendreq", {
+      const response = await fetch(`${api_base}/sendreq`, {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
@@ -18,7 +18,7 @@ function Birthdayprofile({ data }) {
       const result = await response.json();
       console.log(result);
       if (result.acknowledged == true) {
-        setrender("ds");
+        setrender(render + 1 + "ds");
       } else {
         alert("Error in sending request");
       }
@@ -30,7 +30,7 @@ function Birthdayprofile({ data }) {
     <div class="d-flex flex-start align-items-center mx-auto mb-4 justify-content-between">
       <div className="m-0 d-flex p-0">
         <img
-          class="rounded-1 mynavbarimg shadow-1-strong me-3"
+          class="rounded-3 mynavbarimg shadow-1-strong me-3 py-1 px-1"
           src={
             data.picturePath
               ? data.picturePath
@@ -38,15 +38,17 @@ function Birthdayprofile({ data }) {
           }
           alt="avatar"
         />
-        <div>
-          <h6 class="fw-bold text-light mb-1">{data.name}</h6>
+        <div className="align-self-center">
+          <h6 class="fw-lighta text-light mb-1 small">
+            {data.name.toUpperCase()}
+          </h6>
           <p class="text-purple small  mb-0 fw-lighta">
-            {data.friends.length} Friends
+            {data.friends.length} Friend
           </p>
         </div>
       </div>
       <div className="d-block">
-        <i class="fa-solid fa-plus text-purple" onClick={sendrequest}></i>
+        <i class={`fa-solid fa-plus text-purple `} onClick={sendrequest}></i>
       </div>
     </div>
   );

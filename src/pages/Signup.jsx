@@ -1,11 +1,12 @@
-import React, { useState } from "react";
+import React, { useContext, useState } from "react";
 import Authcover from "../components/covers/Authcover";
-import { TextField, ThemeProvider, createTheme } from "@mui/material";
 import { Link, useNavigate } from "react-router-dom";
 import { getDownloadURL, ref, uploadBytesResumable } from "firebase/storage";
 import { storage } from "../firebase";
+import { AuthContexter } from "../context/Authcontext";
 
 function Signup() {
+const { userData, setrender, render,api_base } = useContext(AuthContexter);
   const navigation = useNavigate();
   const [error, seterror] = useState();
   const [loader, setloader] = useState(false);
@@ -42,7 +43,7 @@ function Signup() {
         setinputdata(inputdata)
         if (checker.test(inputdata.email)) {
           try {
-            const response = await fetch("http://localhost:8000/user/signup", {
+            const response = await fetch(`${api_base}/user/signup`, {
               method: "POST",
               headers: {
                 "Content-Type": "application/json",

@@ -2,13 +2,13 @@ import React, { useContext, useEffect, useState } from "react";
 import Profile2 from "./profiles/Profile2";
 import { AuthContexter } from "../../context/Authcontext";
 function Notifications() {
-  const { userData, setrender ,render } = useContext(AuthContexter);
+  const { userData, setrender, render, api_base } = useContext(AuthContexter);
   const [notifiactions, setnotifiactions] = useState([]);
   useEffect(() => {
     const confirmreq = async () => {
       try {
         const userId = await userData._id;
-        const response = await fetch("http://localhost:8000/getrequests", {
+        const response = await fetch(`${api_base}/getrequests`, {
           method: "POST",
           headers: {
             "Content-Type": "application/json",
@@ -34,7 +34,7 @@ function Notifications() {
 
         <div className=" p-0 m-0 py-0 mt-0">
           <div class="card-footer   py-md-1  py-1 px-4 myfriendsscrol my-1">
-            {notifiactions.length > 0 ?(
+            {notifiactions.length > 0 ? (
               notifiactions.map((i) => {
                 return <Profile2 data={i} />;
               })
@@ -43,7 +43,6 @@ function Notifications() {
                 <i class="fa-regular fa-face-frown pe-2"></i>Not Found
               </h1>
             )}
-            
           </div>
         </div>
       </div>

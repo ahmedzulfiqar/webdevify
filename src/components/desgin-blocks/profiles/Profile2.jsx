@@ -2,12 +2,12 @@ import React, { useContext } from "react";
 import profile from "../../media/me.jpg";
 import { AuthContexter } from "../../../context/Authcontext";
 function Profile2({ data }) {
-  const { userData, setrender } = useContext(AuthContexter);
+  const { userData, setrender,render,api_base } = useContext(AuthContexter);
   const confirmreq = async () => {
     try {
       const from = data.email;
       const to = userData && userData.email;
-      const response = await fetch("http://localhost:8000/confirmreq", {
+      const response = await fetch(`${api_base}/confirmreq`, {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
@@ -15,7 +15,7 @@ function Profile2({ data }) {
         body: JSON.stringify({ from, to }),
       });
       const result = await response.json();
-     setrender("fvfd")
+      setrender("fvfd");
       console.log(result);
     } catch (error) {
       console.error("Error:", error);
@@ -25,7 +25,7 @@ function Profile2({ data }) {
     try {
       const from = data.email;
       const to = userData && userData.email;
-      const response = await fetch("http://localhost:8000/cancelreq", {
+      const response = await fetch(`${api_base}/cancelreq`, {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
@@ -52,7 +52,9 @@ function Profile2({ data }) {
           alt="avatar"
         />
         <div>
-          <h6 class="fw-bold text-light mb-1 text-uppercase">{data.name}</h6>
+          <h6 class="fw-lighta text-light mb-1 text-uppercase">
+            {data.name.toUpperCase()}
+          </h6>
           <p className="text-purple small mb-0 fw-lighta">
             {data.friends && data.friends.length} Friends
           </p>

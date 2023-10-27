@@ -3,7 +3,7 @@ import Authcover from "../components/covers/Authcover";
 import { Link, useNavigate } from "react-router-dom";
 import { AuthContexter } from "../context/Authcontext";
 function Login() {
-  const { userData, setrender, render } = useContext(AuthContexter);
+  const { userData, setrender, render,api_base } = useContext(AuthContexter);
 
   const navigation = useNavigate();
   const [error, seterror] = useState();
@@ -31,7 +31,7 @@ function Login() {
     ) {
       if (checker.test(inputdata.email)) {
         try {
-          const response = await fetch("http://localhost:8000/user/login", {
+          const response = await fetch(`${api_base}/user/login`, {
             method: "POST",
             headers: {
               "Content-Type": "application/json",

@@ -54,7 +54,7 @@ function Sidebarcomp({ open2 }) {
                   class={" text-light py-2 px-3 mt-0 h5 ps-md-1 ps-2 fw-lighta"}
                 >
                   {!open2 ? (
-                    <span className="text-purple">SOCIAL</span>
+                    <span className="text-purple fw-lighta">SOCIAL</span>
                   ) : (
                     <i
                       class="fa fa-dot-circle text-purple"
@@ -74,7 +74,7 @@ function Sidebarcomp({ open2 }) {
                         }`}
                         aria-hidden="true"
                       ></i>
-                      <span className="fw-lighta   ">{da.head}</span>
+                      <span className="fw-lighta small">{da.head}</span>
                     </Link>
                   );
                 })}

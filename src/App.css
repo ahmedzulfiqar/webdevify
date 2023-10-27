@@ -307,7 +307,8 @@ body {
   transform: translateY(2px) !important;
 }
 .setcardfooter {
-  height: 30vh;
+  min-height: min-content !important;
+  max-height: 30vh !important;
   overflow: scroll;
 }
 .setfindfriends {
@@ -318,13 +319,13 @@ body {
 .setfindfriends2 {
   height: 33vh;
   overflow: scroll;
-  scroll-snap-type: y mandatory;
   transition: all 0.5s ease;
+  scroll-snap-type: y mandatory;
 }
 .setfindfriends2 .card {
+  height: 100% !important;
   scroll-snap-align: start;
-  height: 100%;
-  max-height: 100%;
+  overflow: hidden;
 }
 
 .myfriends {
@@ -378,7 +379,8 @@ body {
   }
 
   .setcardfooter {
-    height: 30vh;
+    min-height: min-content !important;
+    max-height: 30vh !important;
     overflow: scroll;
   }
   .teans img {
@@ -445,4 +447,18 @@ body {
   outline: none !important;
   border: none !important;
   box-shadow: 0 !important;
+}
+.kj {
+  width: 20px !important;
+  transform: translateY(-1px);
+}
+.ht {
+  transform: translateY(-3px);
+}
+.card-images2 {
+  height: 20vh !important;
+}
+.card-images2 .img- {
+  width: auto !important;
+  height: 100% !important;
 }

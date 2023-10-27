@@ -4,7 +4,7 @@ function Profile({ data }) {
   return (
     <div class="d-flex flex-start align-items-center mx-auto mb-4">
       <img
-        class="rounded-1 mynavbarimg shadow-1-strong me-3"
+        class="rounded-2 mynavbarimg shadow-1-strong me-3 p-1"
         src={
           data.picturePath
             ? data.picturePath
@@ -13,7 +13,9 @@ function Profile({ data }) {
         alt="avatar"
       />
       <div>
-        <h6 class="fw-lighta text-light mb-1 ">{data.name}</h6>
+        <h6 class="fw-lighta text-light mb-1 small ">
+          {data.name.toUpperCase()}
+        </h6>
         <p class="text-purple fw-lighta small mb-0">
           {data.friends && data.friends.length} Friends
         </p>
