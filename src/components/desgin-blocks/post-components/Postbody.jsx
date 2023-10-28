@@ -1,8 +1,9 @@
 import React, { useContext, useState } from "react";
-import profile from "../../media/me.jpg";
 import Comment from "./Comment";
 import { AuthContexter } from "../../../context/Authcontext";
 import moment from "moment";
+import "react-responsive-carousel/lib/styles/carousel.min.css"; // requires a loader
+import { Carousel } from "react-responsive-carousel";
 function calculateTimeDifference(createdAt) {
   const now = moment();
   const postTime = moment(createdAt);
@@ -72,17 +73,21 @@ function Postbody({ data, index }) {
     try {
       const email = userData && userData.email;
       const postId = data && data._id;
-      const response = await fetch(`${api_base}/user/postcomment`, {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify({ email, description, postId }),
-      });
-      const result = await response.json();
-      setrender(render + "fvsdfd");
-      setdescription("");
-      console.log(result, "finally");
+      if (description.length > 0) {
+        const response = await fetch(`${api_base}/user/postcomment`, {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify({ email, description, postId }),
+        });
+        const result = await response.json();
+        setrender(render + "fvsdfd");
+        setdescription("");
+        console.log(result, "finally");
+      } else {
+        alert("Fill Something");
+      }
     } catch (error) {
       console.error("Error:", error);
     }
@@ -184,31 +189,37 @@ function Postbody({ data, index }) {
 
         {data?.picturePath.length > 0 && (
           <div className="card-images mt-md-3 mt-3  text-center imgwidth mx-auto">
-            <img
-              src={data?.picturePath}
-              alt=""
-              className=" img-fluid rounded-1 ms-auto shadow"
-              type="button"
-              loading="lazy"
-              data-bs-toggle="modal"
-              data-bs-target={`#exampleModal${index}`}
-            />
+            <Carousel
+              showArrows={true}
+              showStatus={false}
+              infiniteLoop={false}
+              showThumbs={false}
+              swipeable={true}
+              autoPlay={false}
+              showIndicators={false}
+              useKeyboardArrows={true}
+            >
+              <div>
+                <img
+                  src={data?.picturePath}
+                  alt=""
+                  className=" img-fluid rounded-1 ms-auto shadow"
+                  type="button"
+                  loading="lazy"
+                  data-bs-toggle="modal"
+                  data-bs-target={`#exampleModal${index}`}
+                />
+              </div>
+            </Carousel>
           </div>
         )}
         <div className="card-footer py-md-2 py-0  px-0">
-          <div className="row m-0 p-0  justify-content-start px-1 mb-2  my-0 py-0 ">
+          <div className="row m-0 p-0  justify-content-start px-1 my-1  my-0 py-0 ">
             <div className="col-lg-2 col-6 m-0 text-start p-0 ">
               <div className="btn btn-sm px-3 rounded-2 fw-lighta text-light ">
-                <img
-                  src="https://pluspng.com/img-png/facebook-like-png-facebook-new-like-symbol-image-38372-850.png"
-                  className="kj me-2"
-                  alt=""
-                />
                 {data?.likes.length} Likes
               </div>
             </div>
-            <div className="col-md-3 col-5 m-0 text-start p-0 "></div>
-            <div className="col-3 m-0  text-end p-0"></div>
           </div>
           <hr className="opacity-50 m-0 mx-2 p-0 my-0 py-0 ht" />
           <div className="row m-0 p-0 mx-md-0 mx-3 justify-content-between px-lg-5 px-1  ">
@@ -258,8 +269,10 @@ function Postbody({ data, index }) {
           </div>
         </div>
         {comments && (
-          <div className="card-footer border-0 aniamtetime  m-0 p-0  ">
-            <div className="setcardfooter p-0 m-0 py-md-3 py-1 px-md-3 px-1">
+          <div className="card-footer border-0 aniamtetime py-2 m-0 p-0  ">
+            <hr className="opacity-50 m-0 mx-2 p-0 my-0 py-0 ht" />
+
+            <div className="setcardfooter p-0 m-0 py-md-3 py-2 px-md-3 px-1">
               {userData &&
                 data.comments?.map((dats) => {
                   return <Comment data={dats} />;

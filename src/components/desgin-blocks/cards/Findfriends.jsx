@@ -26,89 +26,7 @@ function Findfriends() {
     fetchUsers();
   }, [render]);
 
-  const birthdarylist = [
-    {
-      image:
-        "https://templates.iqonic.design/socialv/bs5/html/dist/assets/images/user/01.jpg",
-      date: "Today",
-      name: "Hamza Shebaz",
-    },
-    {
-      image:
-        "https://templates.iqonic.design/socialv/bs5/html/dist/assets/images/page-img/s2.jpg",
-      date: "Tommorow",
-      name: "Anna Sthesia",
-    },
-    {
-      image:
-        "https://templates.iqonic.design/socialv/bs5/html/dist/assets/images/user/1.jpg",
-      date: "23 March",
-      name: "Jhon Smith",
-    },
-    {
-      image: profile,
-      date: "8 October",
-      name: "Ahmed Zulfiqar",
-    },
-    {
-      image:
-        "https://templates.iqonic.design/socialv/bs5/html/dist/assets/images/page-img/s2.jpg",
-      date: "Tommorow",
-      name: "Anna Sthesia",
-    },
-    {
-      image:
-        "https://templates.iqonic.design/socialv/bs5/html/dist/assets/images/user/01.jpg",
-      date: "Today",
-      name: "Hamza Shebaz",
-    },
-    {
-      image:
-        "https://templates.iqonic.design/socialv/bs5/html/dist/assets/images/page-img/s2.jpg",
-      date: "Tommorow",
-      name: "Anna Sthesia",
-    },
-    {
-      image:
-        "https://templates.iqonic.design/socialv/bs5/html/dist/assets/images/user/1.jpg",
-      date: "23 March",
-      name: "Jhon Smith",
-    },
-    {
-      image: profile,
-      date: "8 October",
-      name: "Ahmed Zulfiqar",
-    },
-    {
-      image:
-        "https://templates.iqonic.design/socialv/bs5/html/dist/assets/images/page-img/s2.jpg",
-      date: "Tommorow",
-      name: "Anna Sthesia",
-    },
-    {
-      image:
-        "https://templates.iqonic.design/socialv/bs5/html/dist/assets/images/user/1.jpg",
-      date: "23 March",
-      name: "Jhon Smith",
-    },
-    {
-      image:
-        "https://templates.iqonic.design/socialv/bs5/html/dist/assets/images/page-img/s2.jpg",
-      date: "Tommorow",
-      name: "Anna Sthesia",
-    },
-    {
-      image:
-        "https://templates.iqonic.design/socialv/bs5/html/dist/assets/images/user/1.jpg",
-      date: "23 March",
-      name: "Jhon Smith",
-    },
-  ];
-  console.log(
-    users
-      .filter((item) => item.email !== userData&&userData.email)
-      .filter((item) => item.requests.includes(userData._id))
-  );
+ 
   return (
     <div className="col-12  p-0 ">
       {users && (
@@ -133,7 +51,7 @@ function Findfriends() {
             <div class="card-footer border-0 py-md-1  py-1 px-4 setfindfriends my-2">
               {users ? (
                 users
-                  .filter((item) => item.email !== userData&&userData.email)
+                  .filter((item) => item.email !== userData && userData.email)
                   .filter((item) => !item.requests.includes(userData._id))
                   .filter((i) => !userData.requests.includes(i._id))
                   .filter((i) => !userData.friends.includes(i._id))

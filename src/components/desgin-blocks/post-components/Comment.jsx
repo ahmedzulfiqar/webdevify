@@ -8,7 +8,7 @@ function Comment({ data }) {
     <>
       <div class="d-flex comment flex-start ps-md-2  border-bottom border-dark pb-2 mb-3  ">
         <img
-          class="rounded-3 mynavbarimg shadow-1-strong me-3 p-1 "
+          class="rounded-3 mynavbarimg shadow-1-strong ms-2 me-3 p-1 "
           src={data.user.picturePath}
           alt="avatar"
         />
@@ -27,7 +27,6 @@ function Comment({ data }) {
           </p>
           <div className="d-flex p-0 m-0 mt-1">
             <div className=" text-purple me-md-2 me-1 fw-lighta">Like</div>
-            <div className=" text-purple ms-md-2 me-1 fw-lighta">Reply</div>
           </div>
         </div>{" "}
       </div>

@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import Homecover from "../components/covers/Homecover";
-import Navbar from "../components/desgin-blocks/sidebars-navbar/Navbar";
+import Navbar from '../components/desgin-blocks/sidebars-navbar/Navbar'
 import Sidebarcomp from "../components/desgin-blocks/sidebars-navbar/Sidebarcomp";
 import Mainsection from "../components/sections/Mainsection";
 function Home({ settheme }) {

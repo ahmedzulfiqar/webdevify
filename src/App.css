@@ -229,7 +229,7 @@ body {
     height: 0 !important;
     overflow-y: scroll;
     position: fixed !important;
-    margin-top: 128px !important;
+    margin-top: 120px !important;
     z-index: 1000;
     width: 0 !important;
   }
@@ -343,8 +343,7 @@ body {
   overflow-y: scroll !important;
 }
 .ds {
-  width: 350px !important;
-  max-width: 100vw;
+
 }
 .cover {
   width: 100% !important;
@@ -385,7 +384,7 @@ body {
   }
   .teans img {
     margin-top: -15vh;
-    transform: translateX(3vw);
+    transform: translateX(0vw);
     border: var(--dark) 5px solid;
     width: 40vw !important;
   }
@@ -461,4 +460,13 @@ body {
 .card-images2 .img- {
   width: auto !important;
   height: 100% !important;
+}
+.absoluters {
+  position: absolute;
+  z-index: 100;
+  top: 9vh;
+  right: 2vw;
+  width: 350px !important;
+  border: 3px solid black;
+  max-width: 95vw;
 }

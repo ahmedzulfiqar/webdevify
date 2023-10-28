@@ -14,7 +14,7 @@ function Post() {
         headers: {
           "Content-Type": "application/json",
         },
-        body: JSON.stringify({ email: userData.email }),
+        body: JSON.stringify({ email: userData&&userData.email }),
       })
         .then((response) => {
           if (!response.ok) {

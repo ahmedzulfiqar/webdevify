@@ -4,10 +4,7 @@ function About() {
   return (
     <div className="card bg-blacks rounded-1 shadow px-md-0 mb-3">
       <div class="card-header text-light fs-3 fw-lighta py-md-2 py-2 ps-4 border-bottom border-dark border-2 d-block">
-        <i
-          class="fa-regular fa-address-card text-purple pe-3"
-          aria-hidden="true"
-        ></i>
+      
         About
       </div>
       <div className="card-header py-3 pe-2">
