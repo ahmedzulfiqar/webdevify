@@ -2,13 +2,36 @@ import React, { useContext, useState } from "react";
 import profile from "../../media/me.jpg";
 import Comment from "./Comment";
 import { AuthContexter } from "../../../context/Authcontext";
+import moment from "moment";
+function calculateTimeDifference(createdAt) {
+  const now = moment();
+  const postTime = moment(createdAt);
 
+  const diffInSeconds = now.diff(postTime, "seconds");
+  if (diffInSeconds < 60) {
+    return `${diffInSeconds} seconds ago`;
+  }
+
+  const diffInMinutes = now.diff(postTime, "minutes");
+  if (diffInMinutes < 60) {
+    return `${diffInMinutes} minutes ago`;
+  }
+
+  const diffInHours = now.diff(postTime, "hours");
+  if (diffInHours < 24) {
+    return `${diffInHours} hours ago`;
+  }
+
+  const diffInDays = now.diff(postTime, "days");
+  return `${diffInDays} days ago`;
+}
 function Postbody({ data, index }) {
   const [more, setmore] = useState(true);
   const [like, setlike] = useState(false);
   const [comments, setcomments] = useState(false);
   const [description, setdescription] = useState("");
-  const { userData, setrender, render,api_base } = useContext(AuthContexter);
+  const { userData, setrender, render, api_base } = useContext(AuthContexter);
+  const timeDifference = calculateTimeDifference(data.createdAt);
   const likepost = async () => {
     try {
       const email = userData && userData.email;
@@ -64,6 +87,7 @@ function Postbody({ data, index }) {
       console.error("Error:", error);
     }
   };
+
   return (
     <div class="card bg-blacks mb-3">
       <div class="card-body fontcahnge px-md-3 px-2 pt-md-3 pt-3 pb-0 justify-content-center">
@@ -77,7 +101,7 @@ function Postbody({ data, index }) {
             <h6 class="fw-lighta text-light  mb-0">
               {data?.name.toUpperCase()}
             </h6>
-            <p class="text-purple fw-lighta small mb-0">Just Now</p>
+            <p class="text-purple fw-lighta small mb-0">{timeDifference}</p>
           </div>
         </div>
         <div
@@ -183,8 +207,7 @@ function Postbody({ data, index }) {
                 {data?.likes.length} Likes
               </div>
             </div>
-            <div className="col-md-3 col-5 m-0 text-start p-0 ">
-            </div>
+            <div className="col-md-3 col-5 m-0 text-start p-0 "></div>
             <div className="col-3 m-0  text-end p-0"></div>
           </div>
           <hr className="opacity-50 m-0 mx-2 p-0 my-0 py-0 ht" />

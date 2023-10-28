@@ -106,7 +106,7 @@ function Findfriends() {
   ];
   console.log(
     users
-      .filter((item) => item.email !== userData.email)
+      .filter((item) => item.email !== userData&&userData.email)
       .filter((item) => item.requests.includes(userData._id))
   );
   return (
@@ -133,7 +133,7 @@ function Findfriends() {
             <div class="card-footer border-0 py-md-1  py-1 px-4 setfindfriends my-2">
               {users ? (
                 users
-                  .filter((item) => item.email !== userData.email)
+                  .filter((item) => item.email !== userData&&userData.email)
                   .filter((item) => !item.requests.includes(userData._id))
                   .filter((i) => !userData.requests.includes(i._id))
                   .filter((i) => !userData.friends.includes(i._id))

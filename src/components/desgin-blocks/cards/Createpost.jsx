@@ -75,7 +75,7 @@ function Createpost() {
         <div className="card-body d-flex d-block py-md-2 py-2">
           <div className="d-flex w-100">
             <img
-              src={userData.picturePath}
+              src={userData&&userData.picturePath}
               alt=""
               className="img-fluid rounded-circle  mynavbarimg pt-0"
             />

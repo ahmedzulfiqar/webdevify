@@ -1,67 +1,49 @@
-import React from "react";
+import React, { useContext, useEffect, useState } from "react";
 import image from "../../media/me.jpg";
+import { AuthContexter } from "../../../context/Authcontext";
 function Freindscard() {
-  const images = [
-    {
-      image: image,
+  const { userData, setrender, render, api_base } = useContext(AuthContexter);
+  const [friends, setfriends] = useState([]);
+  useEffect(() => {
+    const getfriends = async () => {
+      try {
+        const userId = await userData._id;
+        const response = await fetch(`${api_base}/user/friends`, {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify({ userId }),
+        });
+        const result = await response.json();
+        setfriends(result.response);
+      } catch (error) {
+        console.error("Error:", error);
+      }
+    };
 
-      name: "Ahmed ",
-    },
-    {
-      image:
-        "https://templates.iqonic.design/socialv/bs5/html/dist/assets/images/user/06.jpg",
-      name: "Erutgul Ghazi",
-    },
-    {
-      image:
-        "https://templates.iqonic.design/socialv/bs5/html/dist/assets/images/user/07.jpg",
-      name: "Osman Bey",
-    },
-    {
-      image:
-        "https://templates.iqonic.design/socialv/bs5/html/dist/assets/images/user/08.jpg",
-      name: "Waleed ",
-    },
-    {
-      image:
-        "https://templates.iqonic.design/socialv/bs5/html/dist/assets/images/user/09.jpg",
-      name: "Nayab Khan",
-    },
-    {
-      image: image,
-
-      name: "Jhon khan",
-    },
-    {
-      image:
-        "https://templates.iqonic.design/socialv/bs5/html/dist/assets/images/user/07.jpg",
-      name: "Mr Beast",
-    },
-    {
-      image:
-        "https://templates.iqonic.design/socialv/bs5/html/dist/assets/images/user/05.jpg",
-      name: "Mark Robber",
-    },
-    {
-      image:
-        "https://templates.iqonic.design/socialv/bs5/html/dist/assets/images/page-img/59.jpg",
-      name: "I Show Speed",
-    },
-  ];
+    getfriends();
+  }, [render]);
   return (
     <div className="card bg-blacks rounded-1 shadow px-md-0 mb-3">
       <div class="card-header text-light fs-3 fw-lighta py-md-2 py-2 ps-4 border-bottom border-dark border-2 d-block">
-        <i class="fa-solid fa-user-group text-purple pe-3" aria-hidden="true"></i>
+        <i
+          class="fa-solid fa-user-group text-purple pe-3"
+          aria-hidden="true"
+        ></i>
         Friends
       </div>
       <div className="card-header py-3 px-3">
-        <div className="row m-0">
-          {images.map((i, index) => {
+        <div className="row m-0 justify-content-start">
+          {friends.map((i, index) => {
             return (
               <>
-                <div className="col-4 px-1 pb-2">
-                  <img src={i.image} alt="" className="img-fluid" />
-                  <div className="small fw-lighta text-light text-center pt-1 opacity-75">{i.name}</div>
+                <div className="col-4   pb-2">
+                  <img
+                    src={i.picturePath}
+                    alt=""
+                    className="img-fluid rounded-1 p-md-0 p-1"
+                  />
                 </div>
               </>
             );

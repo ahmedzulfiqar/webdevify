@@ -66,7 +66,7 @@ function Photoscard() {
                   aria-hidden="true"
                 >
                   <div class="modal-dialog modal-dialog-centered">
-                    <img src={i.image} alt=""  className="img-fluid"/>
+                    <img src={i.image} alt="" className="img-fluid" />
                   </div>
                 </div>
               </>

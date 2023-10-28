@@ -7,7 +7,7 @@ import Button from "@mui/material/Button";
 import { AuthContexter } from "../../../context/Authcontext";
 function Navbar({ setopen2, open2, settheme }) {
   const [Scrolled, setScrolled] = useState(false);
-  const { userData, setrender , render } = useContext(AuthContexter);
+  const { userData, setrender, render } = useContext(AuthContexter);
   const [data, setdata] = useState();
   const [anchorEl, setAnchorEl] = React.useState(null);
   useEffect(() => {

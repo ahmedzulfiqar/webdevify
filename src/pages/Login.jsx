@@ -42,6 +42,7 @@ function Login() {
             const data = await response.json();
             localStorage.setItem("jwtToken", data.token);
             seterror("Authentication Successful");
+            setrender(render + 1);
             setTimeout(() => {
               navigation("/webdevify");
             }, 2000);

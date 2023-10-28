@@ -1,6 +1,8 @@
-import React from "react";
+import React, { useContext } from "react";
 import profile from "../../media/me.jpg";
+import { AuthContexter } from "../../../context/Authcontext";
 function Profiletop() {
+  const { userData, setrender, render, api_base } = useContext(AuthContexter);
   return (
     <div className="col-lg-11 col-12  p-0 ">
       <div className="card bg-blacks border-0 shadow  over rounded-1 border-0">
@@ -17,14 +19,14 @@ function Profiletop() {
           <div className="row m-0 justify-content-between text-lg-start text-center">
             <div className=" col-lg-3 col-12 ">
               <img
-                src={profile}
+                src={userData.picturePath}
                 alt=""
-                className="img-fluid  rounded-circle border-black  pt-0"
+                className="img-fluid  rounded-circle border-black  p-0 pt-0"
               />
             </div>
             <div className="pt-2 col-lg-5 col-12">
-              <div className="display-6">Ahmed Zulfiqar</div>
-              <div className="fs-6 ps-1 pt-1 muted">250 Friends</div>
+              <div className="fs-3 text-uppercase">{userData.name}</div>
+              <div className="fs-6 pt-2 muted">250 Friends</div>
             </div>
             <div className="col-lg-4 col-12  text-lg-end text-center align-self-center d-flex justify-content-center d-lg-block d-none">
               <div className="btn border-purple text-purple btn-small ">
