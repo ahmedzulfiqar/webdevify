@@ -4,7 +4,7 @@ import Postbody from "./Postbody";
 import Textpostbody from "./Textpostbody";
 import { AuthContexter } from "../../../context/Authcontext";
 function Post() {
-  const { userData, setrender, render ,api_base} = useContext(AuthContexter);
+  const { userData, setrender, render, api_base } = useContext(AuthContexter);
 
   const [posts, setPosts] = useState([]);
   useEffect(() => {
@@ -14,7 +14,7 @@ function Post() {
         headers: {
           "Content-Type": "application/json",
         },
-        body: JSON.stringify({ email: userData&&userData.email }),
+        body: JSON.stringify({ email: userData && userData.email }),
       })
         .then((response) => {
           if (!response.ok) {

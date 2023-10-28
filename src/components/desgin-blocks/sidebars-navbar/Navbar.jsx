@@ -41,7 +41,6 @@ function Navbar({ setopen2, open2, settheme }) {
     setrender(true);
   };
 
-  
   return (
     <div className="col-12 p-0 m-0">
       <nav
@@ -51,19 +50,11 @@ function Navbar({ setopen2, open2, settheme }) {
       >
         <div class="container-fluid">
           <a
-            class="display-6 text-purple fw-bolder d-xl-block d-none "
+            class="display-6 text-purple fw-bolder d-block"
             href="#"
             onClick={() => setopen2(!open2)}
           >
-            <i class="fa-brands fa-slack px-2"></i>
-            Webdevify
-          </a>
-          <a
-            class="display-6 text-purple fw-bolder  d-xl-none d-block "
-            href="#"
-            onClick={() => setopen2(!open2)}
-          >
-            <i class={"fa-brands fa-slack pe-2 "}></i>
+            <i class={`fa-solid fa-${open2 ? "bars" : "close fa-rotate-90"} px-2`}></i>
             Webdevify
           </a>
           <div class=" justify-content-end algin-self-center ms-auto me-5 pre ">
@@ -107,7 +98,7 @@ function Navbar({ setopen2, open2, settheme }) {
               animate={{ y: 10, opacity: 1 }}
               transition={{
                 type: "keyframes",
-                duration:".5"
+                duration: ".5",
               }}
             >
               <motion.li

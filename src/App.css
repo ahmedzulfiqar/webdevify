@@ -273,11 +273,11 @@ body {
 @media screen and (max-width: 600px) {
   .mainsec {
     overflow: scroll !important;
-    height: 83vh !important;
+    height: 80vh !important;
   }
   .mainsec2 {
     overflow: scroll !important;
-    height: 88vh !important;
+    height: 80vh !important;
   }
 }
 /********************************************* POST-CONTENT-CSS *********************************************/

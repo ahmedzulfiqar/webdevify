@@ -152,18 +152,13 @@ function Createpost() {
 
         <div className="card-body d-flex d-block  py-2">
           <div className="d-flex w-100">
-            <img
-              src={userData&&userData.picturePath}
-              alt=""
-              className="img-fluid rounded-1 d-none  pt-0"
-              width={"15%"}
-            />
             <input
               type="text"
               className="bg-transparent ps-1 border-0 text-white w-100  small fw-lighta"
               placeholder="Write Something"
-              onChange={handelchange}
               value={sendingdata.description}
+              name="description"
+              onChange={(e) => handelchange(e)}
             />
           </div>
           <div className="btn bg-purpleless text-purple  fw-bolder m-0 py-1 px-2 fw-lighta small btn-sm" onClick={handleSubmit}>
