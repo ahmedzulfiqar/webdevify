@@ -3,7 +3,7 @@ import Authcover from "../components/covers/Authcover";
 import { Link, useNavigate } from "react-router-dom";
 import { AuthContexter } from "../context/Authcontext";
 function Login() {
-  const { userData, setrender, render,api_base } = useContext(AuthContexter);
+  const { userData, setrender, render, api_base } = useContext(AuthContexter);
 
   const navigation = useNavigate();
   const [error, seterror] = useState();
@@ -43,7 +43,7 @@ function Login() {
             localStorage.setItem("jwtToken", data.token);
             seterror("Authentication Successful");
             setTimeout(() => {
-              window.location.reload();
+              navigation("/webdevify");
             }, 2000);
           } else {
             const responseData = await response.json();
