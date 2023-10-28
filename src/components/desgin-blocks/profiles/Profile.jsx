@@ -4,7 +4,7 @@ function Profile({ data }) {
   return (
     <div class="d-flex flex-start align-items-center mx-auto mb-4">
       <img
-        class="rounded-2 mynavbarimg shadow-1-strong me-3 p-1"
+        class="rounded-2 mynavbarimg shadow-1-strong me-3"
         src={
           data.picturePath
             ? data.picturePath

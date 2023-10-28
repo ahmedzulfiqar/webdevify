@@ -172,8 +172,8 @@ function Postbody({ data, index }) {
           </div>
         )}
         <div className="card-footer py-md-2 py-0  px-0">
-          <div className="row m-0 p-0 justify-content-start px-1 mb-2  my-0 py-0 ">
-            <div className="col-lg-2 col-4 m-0 text-start p-0 ">
+          <div className="row m-0 p-0  justify-content-start px-1 mb-2  my-0 py-0 ">
+            <div className="col-lg-2 col-6 m-0 text-start p-0 ">
               <div className="btn btn-sm px-3 rounded-2 fw-lighta text-light ">
                 <img
                   src="https://pluspng.com/img-png/facebook-like-png-facebook-new-like-symbol-image-38372-850.png"
@@ -188,7 +188,7 @@ function Postbody({ data, index }) {
             <div className="col-3 m-0  text-end p-0"></div>
           </div>
           <hr className="opacity-50 m-0 mx-2 p-0 my-0 py-0 ht" />
-          <div className="row m-0 p-0 justify-content-between px-lg-5 px-1  ">
+          <div className="row m-0 p-0 mx-md-0 mx-3 justify-content-between px-lg-5 px-1  ">
             <div className="col-3 m-0 text-start p-0">
               <div
                 className="btn btn-sm px-3 rounded-2 bg- text-light "

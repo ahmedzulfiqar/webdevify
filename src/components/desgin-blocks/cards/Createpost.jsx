@@ -10,12 +10,12 @@ function Createpost() {
   const [prewimg, setprewimg] = useState("");
   const [loading, setloading] = useState(false);
   const [sendingdata, setsendingdata] = useState({
-    userId: userData._id,
-    name: userData.name,
-    email: userData.email,
+    userId: userData&&userData._id,
+    name: userData&&userData.name,
+    email: userData&&userData.email,
     description: "",
     picturePath: "",
-    userPicturePath: userData.picturePath,
+    userPicturePath: userData&&userData.picturePath,
   });
   const handelchange = (e) => {
     setsendingdata({ ...sendingdata, [e.target.name]: e.target.value });
@@ -153,7 +153,7 @@ function Createpost() {
         <div className="card-body d-flex d-block  py-2">
           <div className="d-flex w-100">
             <img
-              src={userData.picturePath}
+              src={userData&&userData.picturePath}
               alt=""
               className="img-fluid rounded-1 d-none  pt-0"
               width={"15%"}
@@ -162,13 +162,34 @@ function Createpost() {
               type="text"
               className="bg-transparent ps-1 border-0 text-white w-100  small fw-lighta"
               placeholder="Write Something"
+              onChange={handelchange}
+              value={sendingdata.description}
             />
           </div>
-          <div className="btn bg-purpleless text-purple  fw-bolder m-0 py-1 px-2 fw-lighta small btn-sm">
+          <div className="btn bg-purpleless text-purple  fw-bolder m-0 py-1 px-2 fw-lighta small btn-sm" onClick={handleSubmit}>
             Post
           </div>
         </div>
         <div className="card-footer py-md-3 py-2 border- border-dark border-2 px-1">
+        {!loading ? (
+            <>
+              {prewimg && (
+                <img
+                  src={
+                    !prewimg
+                      ? "https://marketplace.canva.com/lacwk/MAEkYOlacwk/1/tl/canva-black-avatar-MAEkYOlacwk.png"
+                      : prewimg
+                  }
+                  className="w-100 mb-3 seting px-2 rounded-4"
+                  alt=""
+                />
+              )}
+            </>
+          ) : (
+            <div className="w-100 text-center">
+              <InfinitySpin width="200" color="#0a66c2" />
+            </div>
+          )}
           <div className="d-flex p-0">
             <div className="px-1 ps-2">
               <input

@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
 
-function Sidebarcomp({ open2 }) {
+function Sidebarcomp({ open2 ,setopen2}) {
   const sampledata = [
     {
       head: "SOCIAL",
@@ -19,7 +19,7 @@ function Sidebarcomp({ open2 }) {
         {
           head: "My Friends",
           icon: "fa-solid fa-user-group",
-          link: "/webdevify/friendsprofile",
+          link: "/friends",
         },
         {
           head: "Notifcation",
@@ -38,7 +38,7 @@ function Sidebarcomp({ open2 }) {
   return (
     <div
       className={` p-0 sidebar pe-md-5 ${
-       open2 ? "  col-lg-1 col-md-1 " : " col-lg-2 col-md-5"
+        open2 ? "  col-lg-1 col-md-1 " : " col-lg-2 col-md-5"
       }  `}
     >
       <div
@@ -67,6 +67,7 @@ function Sidebarcomp({ open2 }) {
                     <Link
                       class="nav-link text-start text-light py-2 my-1 px-md-2 px-2 hoveri border-bottom border-dark   "
                       to={da.link}
+                      onClick={()=>setopen2(!open2)}
                     >
                       <i
                         class={`${da.icon}  text-secondary fd ${
