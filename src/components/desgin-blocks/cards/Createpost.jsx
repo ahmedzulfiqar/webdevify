@@ -10,43 +10,47 @@ function Createpost() {
   const [prewimg, setprewimg] = useState("");
   const [loading, setloading] = useState(false);
   const [sendingdata, setsendingdata] = useState({
-    userId: userData&&userData._id,
-    name: userData&&userData.name,
-    email: userData&&userData.email,
+    userId: userData && userData._id,
+    name: userData && userData.name,
+    email: userData && userData.email,
     description: "",
     picturePath: "",
-    userPicturePath: userData&&userData.picturePath,
+    userPicturePath: userData && userData.picturePath,
   });
   const handelchange = (e) => {
     setsendingdata({ ...sendingdata, [e.target.name]: e.target.value });
   };
   const handleSubmit = async (e) => {
-    try {
-      const response = await fetch(`${api_base}/user/newpost`, {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify(sendingdata),
-      });
-
-      if (response.ok) {
-        console.log("Post created successfully");
-        setprewimg("");
-        setsendingdata({
-          userId: "",
-          name: "",
-          email: "",
-          description: "",
-          picturePath: "",
-          userPicturePath: "",
+    if (sendingdata.description.length == 0 &&sendingdata.picturePath.length == 0) {
+      alert('fil something')
+    } else {
+      try {
+        const response = await fetch(`${api_base}/user/newpost`, {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify(sendingdata),
         });
-        setrender("1" + render);
-      } else {
-        console.error("Failed to create post");
+
+        if (response.ok) {
+          console.log("Post created successfully");
+          setprewimg("");
+          setsendingdata({
+            userId: "",
+            name: "",
+            email: "",
+            description: "",
+            picturePath: "",
+            userPicturePath: "",
+          });
+          setrender("1" + render);
+        } else {
+          console.error("Failed to create post");
+        }
+      } catch (error) {
+        console.error("Error:", error);
       }
-    } catch (error) {
-      console.error("Error:", error);
     }
   };
 
@@ -75,7 +79,7 @@ function Createpost() {
         <div className="card-body d-flex d-block py-md-2 py-2">
           <div className="d-flex w-100">
             <img
-              src={userData&&userData.picturePath}
+              src={userData && userData.picturePath}
               alt=""
               className="img-fluid rounded-circle  mynavbarimg pt-0"
             />
@@ -161,12 +165,15 @@ function Createpost() {
               onChange={(e) => handelchange(e)}
             />
           </div>
-          <div className="btn bg-purpleless text-purple  fw-bolder m-0 py-1 px-2 fw-lighta small btn-sm" onClick={handleSubmit}>
+          <div
+            className="btn bg-purpleless text-purple  fw-bolder m-0 py-1 px-2 fw-lighta small btn-sm"
+            onClick={handleSubmit}
+          >
             Post
           </div>
         </div>
         <div className="card-footer py-md-3 py-2 border- border-dark border-2 px-1">
-        {!loading ? (
+          {!loading ? (
             <>
               {prewimg && (
                 <img
