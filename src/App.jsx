@@ -36,7 +36,7 @@ function App() {
         location.pathname !== "/webdevify/signup" && (
           <Appcover>
             {complete ? (
-              <div className="row  m-0">
+              <div className="row mbn  m-0">
                 <Loader />
               </div>
             ) : (

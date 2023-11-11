@@ -343,7 +343,6 @@ body {
   overflow-y: scroll !important;
 }
 .ds {
-
 }
 .cover {
   width: 100% !important;
@@ -469,4 +468,13 @@ body {
   width: 350px !important;
   border: 3px solid black;
   max-width: 95vw;
+}
+.mbn {
+  position: absolute;
+  width: 100vw !important;
+  top: 0;
+  z-index: 10000;
+  background-color: var(--dark);
+  backdrop-filter: var(--dark);
+  height: 100vh !important;
 }
