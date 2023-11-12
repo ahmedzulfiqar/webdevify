@@ -2,7 +2,7 @@ import React, { useContext, useEffect, useState } from "react";
 import Postbodyclone from "../post-components/Postbodyclone";
 import { AuthContexter } from "../../../context/Authcontext";
 function Likedposts() {
-  const { userData, setrender, render,api_base } = useContext(AuthContexter);
+  const { userData, setrender, render, api_base } = useContext(AuthContexter);
 
   const [posts, setPosts] = useState([]);
   useEffect(() => {
@@ -12,7 +12,7 @@ function Likedposts() {
         headers: {
           "Content-Type": "application/json",
         },
-        body: JSON.stringify({ email: userData&&userData.email }),
+        body: JSON.stringify({ email: userData && userData.email }),
       })
         .then((response) => {
           if (!response.ok) {
@@ -21,7 +21,7 @@ function Likedposts() {
           return response.json();
         })
         .then((data) => {
-          setPosts(data);
+          setPosts(data)
         })
         .catch((err) => {
           console.log(err.message);
@@ -43,7 +43,7 @@ function Likedposts() {
               posts
                 .sort((a, b) => b.likes.length - a.likes.length)
                 .map((data, index) => {
-                  console.log(data)
+                  console.log(data);
                   return <Postbodyclone data={data} />;
                 })}
           </div>

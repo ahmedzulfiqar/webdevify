@@ -5,12 +5,15 @@ import App from "./App";
 import reportWebVitals from "./reportWebVitals";
 import { BrowserRouter } from "react-router-dom";
 import { Authcontext } from "./context/Authcontext";
+import { ParallaxProvider } from "react-scroll-parallax";
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
   <BrowserRouter>
     <Authcontext>
-      <App />
+      <ParallaxProvider>
+        <App />
+      </ParallaxProvider>
     </Authcontext>
   </BrowserRouter>
 );

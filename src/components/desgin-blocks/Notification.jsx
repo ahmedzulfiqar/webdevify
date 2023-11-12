@@ -27,8 +27,7 @@ function Notifications() {
   return (
     <div className="col-12 p-0">
       <div className="card border-0 rounded-0  myfriends bg-blacks shadow d-block">
-        <div class="card-header text-light fs-3  py-md-2 py-2  b rounded-0">
-          <i class="fa-solid fa-bell text-purple  me-2" aria-hidden="true"></i>{" "}
+        <div class="card-header fw-lighta text-light fs-3 py-md-2 py-2 border-0 rounded-0 ">
           Notification
         </div>
 
@@ -39,9 +38,7 @@ function Notifications() {
                 return <Profile2 data={i} />;
               })
             ) : (
-              <h1 className="fw-lighta fs-3 text-danger">
-                <i class="fa-regular fa-face-frown pe-2"></i>Not Found
-              </h1>
+              <h1 className="fw-lighta fs-3 text-danger">Not Found</h1>
             )}
           </div>
         </div>

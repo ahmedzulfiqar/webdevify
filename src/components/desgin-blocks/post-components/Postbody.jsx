@@ -273,10 +273,13 @@ function Postbody({ data, index }) {
             <hr className="opacity-50 m-0 mx-2 p-0 my-0 py-0 ht" />
 
             <div className="setcardfooter p-0 m-0 py-md-3 py-2 px-md-3 px-1">
-              {userData &&
-                data.comments?.map((dats) => {
+              {data.comments.length > 0 ? (
+                data.comments.map((dats) => {
                   return <Comment data={dats} />;
-                })}
+                })
+              ) : (
+                <h1 className="fw-lighta fs-5 text-success">Be first to comment</h1>
+              )}
             </div>
             <div class="card-footer border-purple  rounded-1  text-muted d-flex justify-content-start align-items-center px-3 my-3">
               <input

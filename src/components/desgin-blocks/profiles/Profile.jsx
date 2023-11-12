@@ -2,7 +2,7 @@ import React from "react";
 import profile from "../../media/me.jpg";
 function Profile({ data }) {
   return (
-    <div class="d-flex flex-start align-items-center mx-auto mb-4">
+    <div class="d-flex flex-start align-items-center mx-auto mb-3">
       <img
         class="rounded-2 mynavbarimg shadow-1-strong me-3"
         src={

@@ -4,6 +4,7 @@ import { getDownloadURL, ref, uploadBytesResumable } from "firebase/storage";
 import { storage } from "../../../firebase";
 import Loader from "../Loader";
 import { InfinitySpin } from "react-loader-spinner";
+import { Alert, Button, IconButton, Snackbar } from "@mui/material";
 function Createpost() {
   const { userData, setrender, render, api_base } = useContext(AuthContexter);
   const [file, setfile] = useState("");
@@ -17,12 +18,34 @@ function Createpost() {
     picturePath: "",
     userPicturePath: userData && userData.picturePath,
   });
+
+  const [open, setOpen] = React.useState(false);
+
+  const action = (
+    <React.Fragment>
+      <Button color="secondary" size="small" onClick={() => setOpen(!open)}>
+        UNDO
+      </Button>
+      <IconButton
+        size="small"
+        aria-label="close"
+        color="inherit"
+        onClick={() => setOpen(!open)}
+      >
+        <i class="fa fa-leaf" aria-hidden="true"></i>
+      </IconButton>
+    </React.Fragment>
+  );
+
   const handelchange = (e) => {
     setsendingdata({ ...sendingdata, [e.target.name]: e.target.value });
   };
   const handleSubmit = async (e) => {
-    if (sendingdata.description.length == 0 &&sendingdata.picturePath.length == 0) {
-      alert('fil something')
+    if (
+      sendingdata.description.length == 0 &&
+      sendingdata.picturePath.length == 0
+    ) {
+      alert("fil something");
     } else {
       try {
         const response = await fetch(`${api_base}/user/newpost`, {
@@ -45,6 +68,7 @@ function Createpost() {
             userPicturePath: "",
           });
           setrender("1" + render);
+          setOpen(!open);
         } else {
           console.error("Failed to create post");
         }
@@ -53,7 +77,6 @@ function Createpost() {
       }
     }
   };
-
   const handelimagechange = async (e) => {
     setloading(true);
     setprewimg(URL.createObjectURL(e.target.files[0]));
@@ -71,7 +94,9 @@ function Createpost() {
   };
   return (
     <div className="col-12  p-0 mb-3 ">
-      <div className="card bg-blacks border-0 shadow d-sm-block d-none">
+      <div
+        className="card bg-blacks border-0 shadow d-sm-block d-none"
+      >
         <div className="card-header text-light fs-3 fw-lighta py-md-2 py-2 border-0 d-sm-block d-none">
           Create Post
         </div>
@@ -214,6 +239,19 @@ function Createpost() {
           </div>
         </div>
       </div>
+      <Snackbar
+        open={open}
+        autoHideDuration={6000}
+        onClose={() => setOpen(!open)}
+        anchorOrigin={{ vertical: "top", horizontal: "center" }}
+      >
+        <Alert
+          onClose={() => setOpen(!open)}
+          sx={{ width: "100%", backgroundColor: "#000", color: "#fff" }}
+        >
+          Posted
+        </Alert>
+      </Snackbar>
     </div>
   );
 }

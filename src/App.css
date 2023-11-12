@@ -478,3 +478,7 @@ body {
   backdrop-filter: var(--dark);
   height: 100vh !important;
 }
+.sethmi {
+  width: 95% !important;
+  height: 65px !important;
+}

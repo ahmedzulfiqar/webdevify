@@ -21,7 +21,6 @@ function App() {
   useEffect(() => {
     setTimeout(() => {
       setcomplete(!true);
-      
     }, 5000);
   }, []);
   const location = useLocation();
@@ -49,3 +48,17 @@ function App() {
 }
 
 export default App;
+
+/*
+****************** TODO **************************
+1. do contribution github
+2. build chat app
+3. complete facebook first
+4. canva work
+5. sql learn
+6. find clients
+7. github readme add
+8. Canva post js like saved insta
+9. Add a readme file to my webdevify
+10. showcase my clone on social
+*/

@@ -1,13 +1,14 @@
 import React, { useContext, useEffect, useState } from "react";
 import image from "../../media/me.jpg";
 import { AuthContexter } from "../../../context/Authcontext";
+import Profile from "../profiles/Profile";
 function Freindscard() {
   const { userData, setrender, render, api_base } = useContext(AuthContexter);
   const [friends, setfriends] = useState([]);
   useEffect(() => {
     const getfriends = async () => {
       try {
-        const userId = await userData._id;
+        const userId = (await userData) && userData._id;
         const response = await fetch(`${api_base}/user/friends`, {
           method: "POST",
           headers: {
@@ -29,21 +30,15 @@ function Freindscard() {
       <div class="card-header text-light fs-3 fw-lighta py-md-2 py-2 ps-4 border-bottom border-dark border-2 d-block">
         Friends
       </div>
-      <div className="card-header py-3 px-3">
-        <div className="row m-0 justify-content-start">
-          {friends.map((i, index) => {
-            return (
-              <>
-                <div className="col-4   pb-2">
-                  <img
-                    src={i.picturePath}
-                    alt=""
-                    className="img-fluid rounded-1 p-md-0 p-1"
-                  />
-                </div>
-              </>
-            );
-          })}
+      <div className=" p-0 m-0 py-0 mt-2 border-0">
+        <div class="card-footer  border-0 py-md-1  py-1 px-4  my-1">
+          {friends.length > 0 ? (
+            friends.map((i) => {
+              return <Profile data={i} />;
+            })
+          ) : (
+            <h1 className="fw-lighta fs-3 text-danger">Not Found</h1>
+          )}
         </div>
       </div>
     </div>

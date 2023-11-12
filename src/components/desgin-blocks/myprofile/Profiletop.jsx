@@ -19,23 +19,20 @@ function Profiletop() {
           <div className="row m-0 justify-content-between text-lg-start text-center">
             <div className=" col-lg-3 col-12 ">
               <img
-                src={userData&& userData.picturePath}
+                src={userData && userData.picturePath}
                 alt=""
                 className="img-fluid  rounded-circle border-black  p-0 pt-0"
               />
             </div>
             <div className="pt-2 col-lg-5 col-12">
-              <div className="fs-3 text-uppercase">{userData&&userData.name}</div>
-              <div className="fs-6 pt-2 muted">{userData&&userData.friends.length} Friends</div>
-            </div>
-            <div className="col-lg-4 col-12  text-lg-end text-center align-self-center d-flex justify-content-center d-lg-block d-none">
-              <div className="btn border-purple text-purple btn-small ">
-                Edit Profile
+              <div className="fs-3 m-0 p-0 text-uppercase">
+                {userData && userData.name}
               </div>
-              <div className="btn border-purple bg-purple text-black ms-2">
-                Add A Post
+              <div className="fs-6 pt-1 text-purple  fw-">
+                {userData && userData.friends.length} Friends
               </div>
             </div>
+            <div className="col-lg-4 col-12  text-lg-end text-center align-self-center d-flex justify-content-center d-lg-block d-none"></div>
           </div>
         </div>
       </div>

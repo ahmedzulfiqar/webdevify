@@ -1,6 +1,8 @@
-import React from "react";
+import React, { useContext } from "react";
+import { AuthContexter } from "../../../context/Authcontext";
 
-function Photoscard() {
+function Photoscard({ posts }) {
+  const { userData, setrender, render, api_base } = useContext(AuthContexter);
   const images = [
     {
       image:
@@ -46,31 +48,36 @@ function Photoscard() {
       </div>
       <div className="card-header py-3 px-3">
         <div className="row m-0">
-          {images.map((i, index) => {
-            return (
-              <>
-                <div
-                  className="col-4 px-1 pb-2"
-                  type="button"
-                  data-bs-toggle="modal"
-                  data-bs-target={`#exampleModal${index}`}
-                >
-                  <img src={i.image} alt="" className="img-fluid" />
-                </div>
-                <div
-                  class="modal fade"
-                  id={`exampleModal${index}`}
-                  tabindex="-1"
-                  aria-labelledby="exampleModalLabel"
-                  aria-hidden="true"
-                >
-                  <div class="modal-dialog modal-dialog-centered">
-                    <img src={i.image} alt="" className="img-fluid" />
+          {posts.length > 0 ? (
+            posts.map((i, index) => {
+              console.log(posts);
+              return (
+                <>
+                  <div
+                    className="col-4 px-1 pb-2"
+                    type="button"
+                    data-bs-toggle="modal"
+                    data-bs-target={`#exampleModal${index}`}
+                  >
+                    <img src={i.picturePath} alt="" className="img-fluid sethmi" />
                   </div>
-                </div>
-              </>
-            );
-          })}
+                  <div
+                    class="modal fade"
+                    id={`exampleModal${index}`}
+                    tabindex="-1"
+                    aria-labelledby="exampleModalLabel"
+                    aria-hidden="true"
+                  >
+                    <div class="modal-dialog modal-dialog-centered">
+                      <img src={i.picturePath} alt="" className="img-fluid" />
+                    </div>
+                  </div>
+                </>
+              );
+            })
+          ) : (
+            <h1 className="fw-lighta fs-3 text-danger">No Photos</h1>
+          )}
         </div>
       </div>
     </div>

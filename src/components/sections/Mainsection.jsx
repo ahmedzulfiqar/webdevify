@@ -9,6 +9,7 @@ import { Outlet, Route, Routes } from "react-router-dom";
 import Notifications from "../desgin-blocks/Notification";
 import Myprofile from "../desgin-blocks/myprofile/Myprofile";
 import Friendprofile from "../desgin-blocks/friend-profile/Friendprofile";
+import { Parallax } from "react-scroll-parallax";
 
 function Mainsection({ open }) {
   return (
@@ -22,7 +23,7 @@ function Mainsection({ open }) {
               <>
                 <Middlecover>
                   <div className="col-xl-8 col-md-7 col-12 px-xl-5 px-md-3 px-0">
-                    <div className="row m-0 p-0 mainsec ">
+                    <div className="row m-0 p-0  mainsec">
                       <Createpost />
                       <Post />
                     </div>

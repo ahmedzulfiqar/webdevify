@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
 
-function Sidebarcomp({ open2 ,setopen2}) {
+function Sidebarcomp({ open2, setopen2 }) {
   const sampledata = [
     {
       head: "SOCIAL",
@@ -19,18 +19,58 @@ function Sidebarcomp({ open2 ,setopen2}) {
         {
           head: "My Friends",
           icon: "fa-solid fa-user-group",
-          link: "/friends",
+          link: "/webdevify/myfriends",
         },
         {
           head: "Notifcation",
           icon: "fa-solid fa-bell",
           link: "/webdevify/notification",
         },
-        { head: "Videos", icon: "fa-solid fa-video" },
-        { head: "Pictures", icon: "fa-solid fa-image" },
-        { head: "Liked Posts", icon: "fa-solid fa-thumbs-up" },
-        { head: "Chat", icon: "fa-solid fa-message" },
-        { head: "Saved", icon: "fa-solid fa-bookmark" },
+        {
+          head: (
+            <>
+              Videos{" "}
+              <span className="small text-purple fw-lighta"> coming soon</span>{" "}
+            </>
+          ),
+          icon: "fa-solid fa-video",
+        },
+        {
+          head: (
+            <>
+              Photos{" "}
+              <span className="small text-purple fw-lighta"> coming soon</span>{" "}
+            </>
+          ),
+          icon: "fa-solid fa-image",
+        },
+        {
+          head: (
+            <>
+              Liked Posts{" "}
+              <span className="small text-purple fw-lighta"> coming soon</span>{" "}
+            </>
+          ),
+          icon: "fa-solid fa-thumbs-up",
+        },
+        {
+          head: (
+            <>
+              Chat{" "}
+              <span className="small text-purple fw-lighta"> coming soon</span>{" "}
+            </>
+          ),
+          icon: "fa-solid fa-message",
+        },
+        {
+          head: (
+            <>
+              Saved{" "}
+              <span className="small text-purple fw-lighta"> coming soon</span>{" "}
+            </>
+          ),
+          icon: "fa-solid fa-bookmark",
+        },
       ],
     },
   ];
@@ -67,7 +107,7 @@ function Sidebarcomp({ open2 ,setopen2}) {
                     <Link
                       class="nav-link text-start text-light py-2 my-1 px-md-2 px-2 hoveri border-bottom border-dark   "
                       to={da.link}
-                      onClick={()=>setopen2(!open2)}
+                      onClick={() => setopen2(!open2)}
                     >
                       <i
                         class={`${da.icon}  text-secondary fd ${

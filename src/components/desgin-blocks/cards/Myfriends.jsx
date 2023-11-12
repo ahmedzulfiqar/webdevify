@@ -8,7 +8,7 @@ function Myfriends() {
   useEffect(() => {
     const getfriends = async () => {
       try {
-        const userId = await userData._id;
+        const userId = await userData&&userData._id;
         const response = await fetch(`${api_base}/user/friends`, {
           method: "POST",
           headers: {
@@ -40,7 +40,7 @@ function Myfriends() {
               })
             ) : (
               <h1 className="fw-lighta fs-3 text-danger">
-                <i class="fa-regular fa-face-frown pe-2"></i>Not Found
+            Not Found
               </h1>
             )}
           </div>
