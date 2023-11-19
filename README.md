@@ -133,7 +133,7 @@ git push origin feature/your-feature-name
 
 ## Author
 
- [@octokatherine](https://www.github.com/ahmedzulfiqar)
+ [@ahmedzulfiqar](https://www.github.com/ahmedzulfiqar)
 
 ## Color Reference
 
@@ -141,7 +141,7 @@ git push origin feature/your-feature-name
 | ----------------- | ------------------------------------------------------------------ |
 | Main Color | ![#0a66c2](https://via.placeholder.com/10/0a66c2?text=+) #0a66c2 |
 | Main low opacity Color | ![#0a66c234](https://via.placeholder.com/10/0a66c234?text=+) #0a66c234 |
-| base Color | ![#0f0f0f](https://via.placeholder.com/10/0f0f0f?text=+) #0f0f0f |
+| base Color | ![#0f0f0f](https://via.placeholder.com/10/?text=+) #0f0f0f |
 | base secondary Color | ![#0f0f0fe1](https://via.placeholder.com/10/0f0f0fe1?text=+) #0f0f0fe1 |
 
 
@@ -149,7 +149,6 @@ git push origin feature/your-feature-name
 
 https://ahmedzulfiqar.github.io/webdevify/
 
-![Logo](https://opranstudio.netlify.app/static/media/370258937_1000446534347484_6738224902469943689_n-removebg-preview.4085f1547890d42512cc.png)
 
 
 ##  About Me
