@@ -28,7 +28,6 @@ function App() {
     <div className="App" data-theme={theme}>
       <Routes>
         <Route  path="/webdevify/login" element={<Login />} />
-        <Route  path="*" element={<Login />} />
         <Route path="/webdevify/signup" element={<Signup />} />
       </Routes>
 
