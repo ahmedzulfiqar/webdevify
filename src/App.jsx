@@ -54,11 +54,13 @@ export default App;
 1. do contribution github
 2. build chat app
 3. complete facebook first
-4. canva work
+4. canva work *X*
 5. sql learn
 6. find clients
 7. github readme add
 8. Canva post js like saved insta
 9. Add a readme file to my webdevify
-10. showcase my clone on social
+10. showcase my clone on social online mockup
+11. Add cover photo change and Videos TO Find freinds in mobile view
+12. Make the repo secure ENV
 */
