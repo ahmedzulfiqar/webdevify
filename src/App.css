@@ -13,7 +13,7 @@
 }
 :root {
   --purple: #0a66c2;
-  --lesspurple: rgba(10, 102, 194, 0.202);
+  --lesspurple: #0a66c234;
   --dark: #0f0f0f;
   --lessdark: #0f0f0fe1;
   --grey: #1a1a1a;

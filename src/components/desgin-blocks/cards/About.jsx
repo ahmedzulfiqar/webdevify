@@ -18,7 +18,7 @@ function About() {
   const submit = async () => {
     const email = userData && userData.email;
     try {
-      const response = await fetch(`http://localhost:8000/edit-details`, {
+      const response = await fetch(`${api_base}/edit-details`, {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
@@ -38,7 +38,7 @@ function About() {
       <div class="card-header text-light fs-3 fw-lighta py-md-2 py-2 ps-4 border-bottom border-dark border-2 d-block">
         <div className="d-flex justify-content-between">
           <div className="fw-lighta">About</div>
-          {editmode ? (
+          {!editmode ? (
             <div
               className="fw-lighta fs-6 align-self-center"
               onClick={() => seteditmode(!editmode)}
@@ -66,7 +66,7 @@ function About() {
       <div className="card-header py-3 pe-2">
         <div className="d-block text-muted fw-lighta w-100 py-2">
           <span className="fw-bolder text-light opacity-75 ">Bio - </span>
-          {editmode ? (
+          {!editmode ? (
             <span> {userData?.bio}</span>
           ) : (
             <input
@@ -80,7 +80,7 @@ function About() {
         </div>
         <div className="d-block text-muted fw-lighta w-100 py-2">
           <span className="fw-bolder text-light opacity-75">Job - </span>
-          {editmode ? (
+          {!editmode ? (
             <span> {userData?.occupation}</span>
           ) : (
             <input
@@ -94,7 +94,7 @@ function About() {
         </div>
         <div className="d-block text-muted fw-lighta w-100 py-2">
           <span className="fw-bolder text-light opacity-75">Location -</span>
-          {editmode ? (
+          {!editmode ? (
             <span> {userData?.location}</span>
           ) : (
             <input
