@@ -55,7 +55,7 @@ function Navbar({ setopen2, open2, settheme }) {
             onClick={() => setopen2(!open2)}
           >
             <i class={`fa-solid fa-${open2 ? "bars" : "close fa-rotate-90"} px-2`}></i>
-            Webdevify Facebook Clone
+            Webdevify
           </a>
           <div class=" justify-content-end algin-self-center ms-auto me-5 pre ">
             <ul class="navbar-nav d-md-flex d-none">
